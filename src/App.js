@@ -71,8 +71,6 @@ const handleSubmit = (event) => {
 
 console.log(food);
 
-
-
   return (
 
     <div className="wrapper">
