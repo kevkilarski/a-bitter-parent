@@ -34,9 +34,9 @@ const handleSubmit = (event) => {
       query: userText,
     },
   })
-    .then((res) => {
+    .then((inputRes) => {
 
-      console.log(res.data);
+      console.log('Input Res:', inputRes.data);
 
       return axios({
         headers: {
@@ -45,15 +45,39 @@ const handleSubmit = (event) => {
           "x-app-key": "d82034658ba4890d822655ea6603a5de",
         },
         data: {
-          query: res.data.common[0].food_name,
+          query: inputRes.data.common[0].food_name,
         },
         method: "POST",
         url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
         dataResponse: "json",
       });
     })
-    .then((res) => {
-      console.log(res.data);
+    .then((foodRes) => {
+      console.log('FoodRes:', foodRes.data.foods[0])
+      const searchFoodSugar = foodRes.data.foods[0].nf_sugars
+
+      return axios({
+        headers: {
+          "Content-Type": "application/json",
+          "x-app-id": "70c46ccc",
+          "x-app-key": "d82034658ba4890d822655ea6603a5de",
+        },
+        data: {
+          query: 'health',
+          detailed: true,
+          full_nutrients: {
+            269: {
+              lte: searchFoodSugar
+            }
+          }
+        },
+        method: "POST",
+        url: `https://trackapi.nutritionix.com/v2/search/instant`,
+        dataResponse: "json",
+      });
+    })
+    .then(suggestionRes => {
+      console.log(suggestionRes);
     });
 }
 
