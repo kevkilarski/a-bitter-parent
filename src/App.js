@@ -1,5 +1,8 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import realtime from "./realtime";
+import { onValue, ref } from 'firebase/database';
+
 
 import './styles.scss';
 
@@ -39,6 +42,22 @@ function App() {
         console.log(res.data);
       });
   }, []);
+
+
+  const [food, setFood] = useState([]);
+
+  useEffect(()=>{
+    const dbRef = ref(realtime)
+    onValue(dbRef, (snapshot)=>{
+      const foodPairs = snapshot.val()
+      console.log(foodPairs)
+      setFood(foodPairs);
+    })
+  }, []);
+
+console.log(food);
+
+
 
   return (
 
