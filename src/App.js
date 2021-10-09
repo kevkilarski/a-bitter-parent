@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
-import "./App.css";
+
+import './styles.scss';
 
 function App() {
   useEffect(() => {
@@ -39,11 +40,32 @@ function App() {
       });
   }, []);
 
-  return <div></div>;
+  return (
+
+    <div className="wrapper">
+      <header className="header">
+        <h1>A Bitter Parent</h1>
+        <p>Chocolates and candy are such a nice treat, but they sometimes don’t provide what we need to stay healthy.  Our app is here to help!  Enter a treat you’re craving into the search form below and we’ll suggest something that will not only satisfy your sweet tooth but will also be a treat you, and your parents, can feel good about!
+        </p>
+      </header>
+
+      <section className="search">
+        Search Form
+      </section>
+
+      <main className="food">
+        Food components
+      </main>
+
+      <footer className="footer">
+        This is a footer
+      </footer>
+
+
+    </div>
+
+  );
 }
 
 export default App;
 
-// }) .then( (result) => {
-// key: `d82034658ba4890d822655ea6603a5de`,
-// AppID = `70c46ccc`,
