@@ -51,9 +51,9 @@ function App() {
     onValue(dbRef, (snapshot)=>{
       const foodPairs = snapshot.val()
       console.log(foodPairs)
+      setFood(foodPairs);
     })
-    setFood(foodPairs)
-  });
+  }, []);
 
 console.log(food);
 
