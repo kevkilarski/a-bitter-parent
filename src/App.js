@@ -1,11 +1,8 @@
 import axios from "axios";
 
-import { useState } from "react";
-
 import { useState, useEffect } from "react";
 import realtime from "./realtime";
 import { onValue, ref } from 'firebase/database';
-
 
 
 import './styles.scss';
@@ -58,10 +55,6 @@ const handleSubmit = (event) => {
     .then((res) => {
       console.log(res.data);
     });
-
-
-
-
 }
 
 
