@@ -1,47 +1,68 @@
 import axios from "axios";
+
+import { useState } from "react";
+
 import { useState, useEffect } from "react";
 import realtime from "./realtime";
 import { onValue, ref } from 'firebase/database';
 
 
+
 import './styles.scss';
+import SearchForm from "./SearchForm.js";
+
 
 function App() {
-  useEffect(() => {
-    axios({
-      headers: {
-        "x-app-id": "70c46ccc",
-        "x-app-key": "d82034658ba4890d822655ea6603a5de",
-      },
-      method: "GET",
-      url: `https://trackapi.nutritionix.com/v2/search/instant`,
-      dataResponse: "json",
-      params: {
-        query: "cheezies",
-      },
-    })
-      .then((res) => {
 
-        console.log(res.data);
+  const [userText, setUserText] = useState('');
 
-        return axios({
-          headers: {
-            "Content-Type": "application/json",
-            "x-app-id": "70c46ccc",
-            "x-app-key": "d82034658ba4890d822655ea6603a5de",
-          },
-          data: {
-            query: res.data.common[0].food_name,
-          },
-          method: "POST",
-          url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
-          dataResponse: "json",
-        });
-      })
-      .then((res) => {
-        console.log(res.data);
+
+const handleChange = (event) => {
+  setUserText(event.target.value);
+}
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  console.log("You submitted!!!!")
+
+  axios({
+    headers: {
+      "x-app-id": "70c46ccc",
+      "x-app-key": "d82034658ba4890d822655ea6603a5de",
+    },
+    method: "GET",
+    url: `https://trackapi.nutritionix.com/v2/search/instant`,
+    dataResponse: "json",
+    params: {
+      query: userText,
+    },
+  })
+    .then((res) => {
+
+      console.log(res.data);
+
+      return axios({
+        headers: {
+          "Content-Type": "application/json",
+          "x-app-id": "70c46ccc",
+          "x-app-key": "d82034658ba4890d822655ea6603a5de",
+        },
+        data: {
+          query: res.data.common[0].food_name,
+        },
+        method: "POST",
+        url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
+        dataResponse: "json",
       });
-  }, []);
+    })
+    .then((res) => {
+      console.log(res.data);
+    });
+
+
+
+
+}
 
 
   const [food, setFood] = useState([]);
@@ -70,6 +91,19 @@ console.log(food);
 
       <section className="search">
         Search Form
+        <SearchForm
+          userText={userText}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+
+        {/* <form>
+          <label>Enter Text here:</label>
+          <input  onChange={handleChange}/>
+          <button>Submit</button>
+        </form> */}
+
+        <button>View Saved Pairs</button>
       </section>
 
       <main className="food">
