@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import realtime from "./realtime";
 import { onValue, ref } from 'firebase/database';
 
+import { randomLetter, randomIndex } from "./utils";
 
 import './styles.scss';
 import SearchForm from "./SearchForm.js";
@@ -56,6 +57,8 @@ const handleSubmit = (event) => {
       console.log('FoodRes:', foodRes.data.foods[0])
       const searchFoodSugar = foodRes.data.foods[0].nf_sugars
 
+      
+
       return axios({
         headers: {
           "Content-Type": "application/json",
@@ -63,7 +66,7 @@ const handleSubmit = (event) => {
           "x-app-key": "d82034658ba4890d822655ea6603a5de",
         },
         data: {
-          query: 'health',
+          query: `${randomLetter()}`,
           detailed: true,
           full_nutrients: {
             269: {
@@ -77,7 +80,12 @@ const handleSubmit = (event) => {
       });
     })
     .then(suggestionRes => {
-      console.log(suggestionRes);
+      const suggestions = suggestionRes.data.common;
+
+      const suggestionIndex = randomIndex(suggestions);
+
+      console.log(suggestions[suggestionIndex]);
+
     });
 }
 
