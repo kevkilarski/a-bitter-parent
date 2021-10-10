@@ -9,11 +9,12 @@ import { randomLetter, randomIndex } from "./utils";
 import './styles.scss';
 import SearchForm from "./SearchForm.js";
 
+import { randomSugar } from "./utils";
 
 function App() {
 
   const [userText, setUserText] = useState('');
-
+  const [error, setError] = useState('');
 
 const handleChange = (event) => {
   setUserText(event.target.value);
@@ -21,6 +22,7 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
+  setError('');
   console.log("You submitted!!!!")
 
   axios({
@@ -70,7 +72,7 @@ const handleSubmit = (event) => {
           detailed: true,
           full_nutrients: {
             269: {
-              lte: (searchFoodSugar - 10)
+              lte: `${randomSugar(searchFoodSugar)}`
             }
           }
         },
@@ -86,6 +88,9 @@ const handleSubmit = (event) => {
 
       console.log(suggestions[suggestionIndex]);
 
+    })
+    .catch((error)=>{
+      setError(error)
     });
 }
 
@@ -131,6 +136,12 @@ console.log(food);
 
       <main className="food">
         Food components
+        { error ? (
+          <div>EAT</div>
+        ): (
+          null
+        )
+          }
       </main>
 
       <footer className="footer">

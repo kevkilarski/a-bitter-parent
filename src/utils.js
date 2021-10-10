@@ -7,8 +7,14 @@ export const randomLetter = () => {
 
   const randomLetterIndex = randomIndex(letters);
 
-  console.log(randomLetterIndex);
-
   return letters[randomLetterIndex];
 }
 
+export const randomSugar = (searchFoodSugar) => {
+  const sugarVal = [ 10, 10, 10, 10, 10, 5, 10, 10,10, 10, 5  ];
+
+  const randomSugarIndex = randomIndex(sugarVal);
+
+  return searchFoodSugar - sugarVal[randomSugarIndex];
+
+}
