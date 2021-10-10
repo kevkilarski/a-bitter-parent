@@ -70,7 +70,7 @@ const handleSubmit = (event) => {
           detailed: true,
           full_nutrients: {
             269: {
-              lte: searchFoodSugar
+              lte: (searchFoodSugar - 10)
             }
           }
         },

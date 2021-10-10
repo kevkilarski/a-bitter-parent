@@ -11,3 +11,4 @@ export const randomLetter = () => {
 
   return letters[randomLetterIndex];
 }
+
