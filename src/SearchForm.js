@@ -3,15 +3,16 @@ const SearchForm = (props) => {
   return (
     <>
       <form onSubmit={props.handleSubmit}>
-        <label htmlFor="formInput">Enter Text here:</label>
+        <label htmlFor="formInput"></label>
         <input 
+          className="input"
           type="text"
           value={props.userText} 
           onChange={props.handleChange}
           id="formInput"
-          placeholder="Carrot Muffin"
+          placeholder="Choose your Food"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="submitButton">Submit</button>
       </form>
     </>
   )

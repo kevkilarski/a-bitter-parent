@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Maitree&family=Montserrat&display=swap%27");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
+
 article,
 aside,
 footer,
@@ -14,60 +17,75 @@ nav,
 section {
   display: block;
 }
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+
 figcaption,
 figure,
 main {
   display: block;
 }
+
 figure {
   margin: 1em 40px;
 }
+
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
+
 pre {
   font-family: monospace, monospace;
   font-size: 1em;
 }
+
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
+
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
+
 b,
 strong {
   font-weight: inherit;
 }
+
 b,
 strong {
   font-weight: bolder;
 }
+
 code,
 kbd,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
+
 dfn {
   font-style: italic;
 }
+
 mark {
   background-color: #ff0;
   color: #000;
 }
+
 small {
   font-size: 80%;
 }
+
 sub,
 sup {
   font-size: 75%;
@@ -75,26 +93,33 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
+
 audio,
 video {
   display: inline-block;
 }
+
 audio:not([controls]) {
   display: none;
   height: 0;
 }
+
 img {
   border-style: none;
 }
+
 svg:not(:root) {
   overflow: hidden;
 }
+
 button,
 input,
 optgroup,
@@ -105,36 +130,43 @@ textarea {
   line-height: 1.15;
   margin: 0;
 }
+
 button,
 input {
   overflow: visible;
 }
+
 button,
 select {
   text-transform: none;
 }
+
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
+
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
+
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
+
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
+
 legend {
   box-sizing: border-box;
   color: inherit;
@@ -143,47 +175,59 @@ legend {
   padding: 0;
   white-space: normal;
 }
+
 progress {
   display: inline-block;
   vertical-align: baseline;
 }
+
 textarea {
   overflow: auto;
 }
-[type="checkbox"],
-[type="radio"] {
+
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
-[type="search"] {
+
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
+
 details,
 menu {
   display: block;
 }
+
 summary {
   display: list-item;
 }
+
 canvas {
   display: inline-block;
 }
+
 template {
   display: none;
 }
+
 [hidden] {
   display: none;
 }
@@ -198,8 +242,6 @@ template {
 }
 
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -211,7 +253,8 @@ template {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -223,30 +266,18 @@ template {
   padding: 0;
   box-sizing: inherit;
 }
+
 html {
   box-sizing: border-box;
   font-size: 125%;
 }
-@import url("https://fonts.googleapis.com/css2?family=Maitree&family=Montserrat&display=swap%27");
 
-// GENERAL
 h1 {
   margin: 0;
 }
 
-// TYPOGRAPHY
-
-$font-primary: "Montserrat", sans-serif;
-$font-secondary: "Maitree", serif;
-
-// COLORS
-
-$color-green: #8df8b7;
-$color-purple: #aebdff;
-$color-orange: #ffb454;
-
 html {
-  background-color: rgb(245, 239, 239);
+  background-color: #f5efef;
 }
 
 .wrapper {
@@ -256,25 +287,25 @@ html {
 }
 
 .header {
-  background-color: $color-purple;
+  background-color: #aebdff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1 {
-    font-family: $font-primary;
-    font-size: 5rem;
-    color: #5c6694;
-    font-weight: bold;
-      span {
-        font-style: italic;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
-  }
+}
+.header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5rem;
+  color: #5c6694;
+  font-weight: bold;
+}
+.header h1 span {
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .search {
-  background-color: $color-green;
+  background-color: #8df8b7;
 }
 
 form {
@@ -283,50 +314,48 @@ form {
   justify-content: center;
   align-items: center;
   padding-top: 22px;
-
-    input {
-      border: 3px solid #19362591;
-      border-radius: 1rem;
-      background-color: #caf8dc;
-      padding: 4px 34px;
-      text-align: center;
-      color: #5a5a5a;
-      font-family: $font-secondary;
-    }
-      .submitButton {
-        font-style: none;
-        background-color: #53c27f;;
-        margin-top: 6px;
-        padding: 6px 18px;
-        border-radius: 12px;
-        color: #19362591;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid #19362591;
-        font-family: $font-secondary;
-      }
+}
+form input {
+  border: 3px solid #19362591;
+  border-radius: 1rem;
+  background-color: #caf8dc;
+  padding: 4px 34px;
+  text-align: center;
+  color: #5a5a5a;
+  font-family: "Maitree", serif;
+}
+form .submitButton {
+  font-style: none;
+  background-color: #53c27f;
+  margin-top: 6px;
+  padding: 6px 18px;
+  border-radius: 12px;
+  color: #19362591;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #19362591;
+  font-family: "Maitree", serif;
 }
 
 .food {
-  background-color: $color-orange;
+  background-color: #ffb454;
   height: calc(100vh - 28vh);
-  font-family: $font-secondary;
+  font-family: "Maitree", serif;
   display: flex;
   text-align: center;
   padding-top: 28px;
-    p{
-      color: #6b2718;
-      font-weight: bold;
-      span {
-        font-weight: bolder;
-        font-style: italic;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
-    }
+}
+.food p {
+  color: #6b2718;
+  font-weight: bold;
+}
+.food p span {
+  font-weight: bolder;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .footer {
-  background-color: $color-purple;
-
-}
+  background-color: #aebdff;
+}/*# sourceMappingURL=styles.css.map */

@@ -112,13 +112,10 @@ console.log(food);
 
     <div className="wrapper">
       <header className="header">
-        <h1>A Bitter Parent</h1>
-        <p>Chocolates and candy are such a nice treat, but they sometimes don’t provide what we need to stay healthy.  Our app is here to help!  Enter a treat you’re craving into the search form below and we’ll suggest something that will not only satisfy your sweet tooth but will also be a treat you, and your parents, can feel good about!
-        </p>
+        <h1>A <span>Bitter</span> Parent</h1>
       </header>
 
       <section className="search">
-        Search Form
         <SearchForm
           userText={userText}
           handleChange={handleChange}
@@ -135,13 +132,15 @@ console.log(food);
       </section>
 
       <main className="food">
-        Food components
+        
         { error ? (
           <div>EAT</div>
         ): (
           null
         )
           }
+          <p> <span>Chocolates</span> and <span>candies</span> are such a nice treat, but they sometimes don’t provide what we need to stay <span>healthy</span>.  Our app is here to help!  Enter a treat you’re craving into the search form below and we’ll <span>suggest</span> something that will not only satisfy your sweet tooth but will also be a treat you, and your parents, can <span>feel good</span> about!
+        </p>
       </main>
 
       <footer className="footer">
@@ -155,4 +154,3 @@ console.log(food);
 }
 
 export default App;
-
