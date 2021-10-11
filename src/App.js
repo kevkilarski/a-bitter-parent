@@ -175,7 +175,7 @@ const handleSubmit = (event) => {
           null
         )
           }
-          <p> <span>Chocolates</span> and <span>candies</span> are such a nice treat, but they sometimes don’t provide what we need to stay <span>healthy</span>.  Our app is here to help!  Enter a treat you’re craving into the search form below and we’ll <span>suggest</span> something that will not only satisfy your sweet tooth but will also be a treat you, and your parents, can <span>feel good</span> about!
+          <p> <span>Hey kids!</span> Enter a sweet treat you’re craving into the search form above and we’ll suggest something that you and your parents can feel good about!
           </p>
 
           <FoodOutput userFood={userFood} altFood={altFood}/>
