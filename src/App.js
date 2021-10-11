@@ -30,8 +30,8 @@ const handleSubmit = (event) => {
 
   axios({
     headers: {
-      "x-app-id": "70c46ccc",
-      "x-app-key": "d82034658ba4890d822655ea6603a5de",
+      "x-app-id": "7dae18ec",
+      "x-app-key": "5a4b147254b31f911e70443e46a963bb",
     },
     method: "GET",
     url: `https://trackapi.nutritionix.com/v2/search/instant`,
@@ -47,8 +47,8 @@ const handleSubmit = (event) => {
       return axios({
         headers: {
           "Content-Type": "application/json",
-          "x-app-id": "70c46ccc",
-          "x-app-key": "d82034658ba4890d822655ea6603a5de",
+          "x-app-id": "7dae18ec",
+          "x-app-key": "5a4b147254b31f911e70443e46a963bb",
         },
         data: {
           query: inputRes.data.common[0].food_name,
@@ -70,8 +70,8 @@ const handleSubmit = (event) => {
       return axios({
         headers: {
           "Content-Type": "application/json",
-          "x-app-id": "70c46ccc",
-          "x-app-key": "d82034658ba4890d822655ea6603a5de",
+          "x-app-id": "7dae18ec",
+          "x-app-key": "5a4b147254b31f911e70443e46a963bb",
         },
         data: {
           query: `${randomLetter()}`,
@@ -99,8 +99,8 @@ const handleSubmit = (event) => {
       return axios({
         headers: {
           "Content-Type": "application/json",
-          "x-app-id": "70c46ccc",
-          "x-app-key": "d82034658ba4890d822655ea6603a5de",
+          "x-app-id": "7dae18ec",
+          "x-app-key": "5a4b147254b31f911e70443e46a963bb",
         },
         data: {
           query: suggestions[suggestionIndex].food_name,
