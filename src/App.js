@@ -8,6 +8,7 @@ import { randomLetter, randomIndex } from "./utils";
 
 import './styles.scss';
 import SearchForm from "./SearchForm.js";
+import FoodOutput from "./FoodOutput.js";
 
 import { randomSugar } from "./utils";
 
@@ -15,6 +16,8 @@ function App() {
 
   const [userText, setUserText] = useState('');
   const [error, setError] = useState('');
+  const [userFood, setUserFood] = useState({});
+  const [altFood, setAltFood] = useState({});
 
 const handleChange = (event) => {
   setUserText(event.target.value);
@@ -57,6 +60,9 @@ const handleSubmit = (event) => {
     })
     .then((foodRes) => {
       console.log('FoodRes:', foodRes.data.foods[0])
+
+      setUserFood(foodRes.data.foods[0]);
+
       const searchFoodSugar = foodRes.data.foods[0].nf_sugars
 
       
@@ -86,8 +92,40 @@ const handleSubmit = (event) => {
 
       const suggestionIndex = randomIndex(suggestions);
 
-      console.log(suggestions[suggestionIndex]);
+      console.log("3rd API", suggestions[suggestionIndex]);
 
+
+
+      return axios({
+        headers: {
+          "Content-Type": "application/json",
+          "x-app-id": "70c46ccc",
+          "x-app-key": "d82034658ba4890d822655ea6603a5de",
+        },
+        data: {
+          query: suggestions[suggestionIndex].food_name,
+        },
+        method: "POST",
+        url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
+        dataResponse: "json",
+      });
+    })
+    .then((altRes) => {
+
+      console.log("4th API", altRes.data.foods[0]);
+      setAltFood(altRes.data.foods[0]);
+
+
+
+
+
+
+
+
+
+
+
+      
     })
     .catch((error)=>{
       setError(error)
@@ -105,8 +143,6 @@ const handleSubmit = (event) => {
       setFood(foodPairs);
     })
   }, []);
-
-console.log(food);
 
   return (
 
@@ -140,7 +176,10 @@ console.log(food);
         )
           }
           <p> <span>Chocolates</span> and <span>candies</span> are such a nice treat, but they sometimes don’t provide what we need to stay <span>healthy</span>.  Our app is here to help!  Enter a treat you’re craving into the search form below and we’ll <span>suggest</span> something that will not only satisfy your sweet tooth but will also be a treat you, and your parents, can <span>feel good</span> about!
-        </p>
+          </p>
+
+          <FoodOutput userFood={userFood} altFood={altFood}/>
+
       </main>
 
       <footer className="footer">

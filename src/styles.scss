@@ -313,6 +313,7 @@ form {
   height: calc(100vh - 28vh);
   font-family: $font-secondary;
   display: flex;
+  flex-direction: column;
   text-align: center;
   padding-top: 28px;
     p{
@@ -325,6 +326,21 @@ form {
       }
     }
 }
+
+
+.foodSection {
+  display: flex;
+}
+
+.foodWrapper {
+  width: 50%;
+}
+
+.foodPicture img {
+  width: 50%;
+  border-radius: 50%;
+}
+
 
 .footer {
   background-color: $color-purple;
