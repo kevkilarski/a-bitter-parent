@@ -44,6 +44,13 @@ const handleSubmit = (event) => {
     },
   })
     .then((inputRes) => {
+
+      console.log("1st call", inputRes);
+
+      if (!inputRes.data.common[0]) {
+        throw new Error ("Food not found - Please try again!")
+      }
+
       return axios({
         headers: {
           "Content-Type": "application/json",
@@ -59,10 +66,17 @@ const handleSubmit = (event) => {
       });
     })
     .then((foodRes) => {
+
+      console.log("2nd call", foodRes);
+
       setUserFood(foodRes.data.foods[0]);
       const searchFoodSugar = foodRes.data.foods[0].nf_sugars
 
-      
+      const sugarCheck = randomSugar(searchFoodSugar);
+
+      if (sugarCheck <= 0) {
+        throw new Error (`You picked ${foodRes.data.foods[0].food_name}. That is healthy! Eat this, you spoiled brat!`)
+      }
 
       return axios({
         headers: {
@@ -75,7 +89,7 @@ const handleSubmit = (event) => {
           detailed: true,
           full_nutrients: {
             269: {
-              lte: `${randomSugar(searchFoodSugar)}`
+              lte: `${sugarCheck}`
             }
           }
         },
@@ -85,9 +99,15 @@ const handleSubmit = (event) => {
       });
     })
     .then(suggestionRes => {
-      const suggestions = suggestionRes.data.common;
 
+      console.log("3rd call", suggestionRes);
+
+      
+      const suggestions = suggestionRes.data.common;
+      
       const suggestionIndex = randomIndex(suggestions);
+
+ 
 
       return axios({
         headers: {
@@ -106,6 +126,8 @@ const handleSubmit = (event) => {
     .then((altRes) => {
       setAltFood(altRes.data.foods[0]);
 
+      console.log("4th call", altRes.status);
+
 
 
 
@@ -119,7 +141,12 @@ const handleSubmit = (event) => {
       
     })
     .catch((error)=>{
-      setError(error)
+      setUserFood({});
+      setAltFood({});
+      setUserText('');
+      alert(error.message);
+      setError(error);
+      console.log(error.message);
     });
 }
 
@@ -134,11 +161,6 @@ const handleSubmit = (event) => {
     const dbRef = ref(realtime, '/pairs')
 
     onValue(dbRef, (snapshot)=>{
-
-      snapshot.forEach((childSnapshot) => {
-        setFood(childSnapshot.val())
-        console.log("Here's one of the childSnapshots we use in the map!", childSnapshot.val());
-      })
 
       console.log("My Snapshot!", snapshot.val());
 
@@ -216,12 +238,7 @@ const handleSubmit = (event) => {
 
       <main className="food">
         
-        { error ? (
-          <div>EAT</div>
-        ): (
-          null
-        )
-          }
+   
           <p> <span>Hey kids!</span> Enter a sweet treat you’re craving into the search form above and we’ll suggest something that you and your parents can feel good about!
           </p>
 
@@ -230,24 +247,27 @@ const handleSubmit = (event) => {
       </main>
 
       <footer className="footer">
-        This is a footer
+        Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin Kilarski at Juno College using the Nutritionix API and Firebase.
       </footer>
     </Route>
 
     <Route path='/savedPairs'>
     <main className="savedMain">
-        {console.log("Our Food DB State", food)}
       
+      <h2>Your Saved Pairs</h2>
+
+      <Link className="homeLink" to="/">
+        <button className="homeButton" >Home</button>
+      </Link>
+
         <ul>
         {
           
           food.map((pair)=>{
             return (
-              <li className="savedPair">
+              <li key={pair.key} className="savedPair">
 
-                {console.log(pair.key)}
-
-                <div className="savedUserfood">
+                <div className="savedUserFood">
                   <p>{pair.userFoodName}</p>
                   <div className="savedUserPic">
                     {

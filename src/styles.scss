@@ -392,6 +392,71 @@ form {
   }
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.savedPair {
+  display: flex;
+  // width: 300px;
+}
+
+.savedUserFood, .savedAltFood {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.savedUserPic, .savedAltPic {
+  height: 200px;
+  width: 200px;
+}
+
+.savedUserPic img, .savedAltPic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+} 
+
+.savedUserPic img {
+  border-radius: 30px 0 0 30px;
+}
+
+.savedAltPic img {
+  border-radius: 0 30px 30px 0;
+  border-left: 2px solid black;
+}
+
+.homeLink {
+  text-decoration: none;
+}
+
+.homeButton {
+  width: 150px;
+      margin-bottom: 10px;
+      font-style: none;
+      background-color: #53c27f;
+      margin-top: 6px;
+      padding: 6px 18px;
+      border-radius: 12px;
+      color: rgb(34, 34, 34);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #19362591;
+      font-family: $font-secondary;
+      cursor: pointer;
+}
+
 .footer {
   background-color: $color-purple;
+  text-align: center;
 }

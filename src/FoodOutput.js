@@ -68,11 +68,11 @@ const FoodOutput = (props) => {
             </div>
             <p className="nutrient" className="nutrient">Sugar: {props.altFood.nf_sugars}g {
               props.userFood.nf_sugars > props.altFood.nf_sugars ? (
-                <i class="fas fa-check-circle"></i>
+                <i className="fas fa-check-circle"></i>
               ) : props.userFood.nf_sugars < props.altFood.nf_sugars ? (
-                <i class="fas fa-times-circle"></i>
+                <i className="fas fa-times-circle"></i>
               ) : (
-                <i class="fas fa-pause-circle"></i>
+                <i className="fas fa-pause-circle"></i>
               ) 
             }</p>
             {
@@ -80,56 +80,56 @@ const FoodOutput = (props) => {
                 <>
                   <p className="nutrient">Calories: {Math.floor(props.altFood.nf_calories)} {
                     props.userFood.nf_calories > props.altFood.nf_calories ? (
-                      <i class="fas fa-check-circle"></i>
+                      <i className="fas fa-check-circle"></i>
                     ) : props.userFood.nf_calories < props.altFood.nf_calories ? (
-                      <i class="fas fa-times-circle"></i>
+                      <i className="fas fa-times-circle"></i>
                     ) : (
-                      <i class="fas fa-pause-circle"></i>
+                      <i className="fas fa-pause-circle"></i>
                     ) 
                   }</p>
                   <p className="nutrient">Cholesterol: {props.altFood.nf_cholesterol}mg {
                     props.userFood.nf_cholesterol > props.altFood.nf_cholesterol ? (
-                      <i class="fas fa-check-circle"></i>
+                      <i className="fas fa-check-circle"></i>
                     ) : props.userFood.nf_cholesterol < props.altFood.nf_cholesterol ? (
-                      <i class="fas fa-times-circle"></i>
+                      <i className="fas fa-times-circle"></i>
                     ) : (
-                      <i class="fas fa-pause-circle"></i>
+                      <i className="fas fa-pause-circle"></i>
                     ) 
                   }</p>
                   <p className="nutrient">Fibre: {props.altFood.nf_dietary_fiber}g {
                     props.userFood.nf_dietary_fiber < props.altFood.nf_dietary_fiber ? (
-                      <i class="fas fa-check-circle"></i>
+                      <i className="fas fa-check-circle"></i>
                     ) : props.userFood.nf_dietary_fiber > props.altFood.nf_dietary_fiber ? (
-                      <i class="fas fa-times-circle"></i>
+                      <i className="fas fa-times-circle"></i>
                     ) : (
-                      <i class="fas fa-pause-circle"></i>
+                      <i className="fas fa-pause-circle"></i>
                     ) 
                   }</p>
                   <p className="nutrient">Sodium: {props.altFood.nf_sodium}g {
                     props.userFood.nf_sodium > props.altFood.nf_sodium ? (
-                      <i class="fas fa-check-circle"></i>
+                      <i className="fas fa-check-circle"></i>
                     ) : props.userFood.nf_sodium < props.altFood.nf_sodium ? (
-                      <i class="fas fa-times-circle"></i>
+                      <i className="fas fa-times-circle"></i>
                     ) : (
-                      <i class="fas fa-pause-circle"></i>
+                      <i className="fas fa-pause-circle"></i>
                     ) 
                   }</p>
                   <p className="nutrient">Carbs: {props.altFood.nf_total_carbohydrate}g {
                     props.userFood.nf_total_carbohydrate > props.altFood.nf_total_carbohydrate ? (
-                      <i class="fas fa-check-circle"></i>
+                      <i className="fas fa-check-circle"></i>
                     ) : props.userFood.nf_total_carbohydrate < props.altFood.nf_total_carbohydrate ? (
-                      <i class="fas fa-times-circle"></i>
+                      <i className="fas fa-times-circle"></i>
                     ) : (
-                      <i class="fas fa-pause-circle"></i>
+                      <i className="fas fa-pause-circle"></i>
                     ) 
                   }</p>
                   <p className="nutrient">Fat: {props.altFood.nf_total_fat}g {
                     props.userFood.nf_total_fat > props.altFood.nf_total_fat ? (
-                      <i class="fas fa-check-circle"></i>
+                      <i className="fas fa-check-circle"></i>
                     ) : props.userFood.nf_total_fat < props.altFood.nf_total_fat ? (
-                      <i class="fas fa-times-circle"></i>
+                      <i className="fas fa-times-circle"></i>
                     ) : (
-                      <i class="fas fa-pause-circle"></i>
+                      <i className="fas fa-pause-circle"></i>
                     ) 
                   }</p>
                 </>
