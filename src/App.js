@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { useState, useEffect } from "react";
 import realtime from "./realtime";
-import { onValue, ref } from 'firebase/database';
+import { onValue, push, ref, getDatabase } from 'firebase/database';
 
 import { randomLetter, randomIndex } from "./utils";
 
@@ -12,12 +12,16 @@ import FoodOutput from "./FoodOutput.js";
 
 import { randomSugar } from "./utils";
 
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 function App() {
 
   const [userText, setUserText] = useState('');
   const [error, setError] = useState('');
   const [userFood, setUserFood] = useState({});
   const [altFood, setAltFood] = useState({});
+  const [food, setFood] = useState([]);
+
 
 const handleChange = (event) => {
   setUserText(event.target.value);
@@ -133,24 +137,45 @@ const handleSubmit = (event) => {
 }
 
 
-  const [food, setFood] = useState([]);
+
 
   useEffect(()=>{
-    const dbRef = ref(realtime)
+    const dbRef = ref(realtime, '/pairs')
     onValue(dbRef, (snapshot)=>{
-      const foodPairs = snapshot.val()
-      console.log(foodPairs)
-      setFood(foodPairs);
+      snapshot.forEach((childSnapshot) => {
+        setFood(childSnapshot.val())
+      })
+
     })
   }, []);
 
+  const savedPair = () => {
+    const db = getDatabase()
+    push(ref(db, 'pairs/'), [
+      {
+        userFood
+      },
+      {
+        altFood
+      }
+    ])
+    console.log('FOOODDD', food)
+  }
+
+
   return (
+
+
+<Router>
 
     <div className="wrapper">
       <header className="header">
         <h1>A <span>Bitter</span> Parent</h1>
       </header>
 
+
+
+      <Route exact path='/'>
       <section className="search">
         <SearchForm
           userText={userText}
@@ -164,7 +189,14 @@ const handleSubmit = (event) => {
           <button>Submit</button>
         </form> */}
 
-        <button>View Saved Pairs</button>
+
+
+        <Link to="/savedPairs">
+          <button onClick={savedPair}>View Saved Pairs</button>
+        </Link>
+
+
+
       </section>
 
       <main className="food">
@@ -185,10 +217,24 @@ const handleSubmit = (event) => {
       <footer className="footer">
         This is a footer
       </footer>
+    </Route>
+
+    <Route path='/savedPairs'>
+      <main className=''>
+
+        <h2>hi</h2>
+          {
+            food.map((pairs)=>{
+              console.log(pairs)
+            })
+          }
+      </main>
+    </Route>
 
 
     </div>
-
+    
+    </Router>
   );
 }
 
