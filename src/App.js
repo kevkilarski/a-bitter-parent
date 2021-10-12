@@ -124,8 +124,6 @@ const handleSubmit = (event) => {
 }
 
 
-
-
   useEffect(()=>{
     const dbRef = ref(realtime, '/pairs')
     onValue(dbRef, (snapshot)=>{
@@ -139,12 +137,8 @@ const handleSubmit = (event) => {
   const savedPair = () => {
     const db = getDatabase()
     push(ref(db, 'pairs/'), [
-      {
-        userFood
-      },
-      {
+        userFood,
         altFood
-      }
     ])
     console.log(food);
   }
@@ -210,7 +204,7 @@ const handleSubmit = (event) => {
       <main className="savedMain">
         {
           food.map((pair)=>{
-            console.log(pair)
+            console.log(pair.food_name)
             // return (
             //   <div className="savedPair">
             //     <div className="savedUserfood">

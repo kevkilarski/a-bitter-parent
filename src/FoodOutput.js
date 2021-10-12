@@ -142,7 +142,7 @@ const FoodOutput = (props) => {
           null       
         )       
       }       
-       
+    
     </section>       
   )
 
