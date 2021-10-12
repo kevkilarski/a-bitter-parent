@@ -11,6 +11,7 @@ const SearchForm = (props) => {
           onChange={props.handleChange}
           id="formInput"
           placeholder="Choose your Food"
+          required
         />
         <button type="submit" className="submitButton">Submit</button>
       </form>
