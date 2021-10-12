@@ -124,15 +124,49 @@ const handleSubmit = (event) => {
 }
 
 
+
+
+
+
+
+
   useEffect(()=>{
     const dbRef = ref(realtime, '/pairs')
+
     onValue(dbRef, (snapshot)=>{
+
       snapshot.forEach((childSnapshot) => {
         setFood(childSnapshot.val())
+        console.log("Here's one of the childSnapshots we use in the map!", childSnapshot.val());
       })
 
+      console.log("My Snapshot!", snapshot.val());
+
+      const ourDB = snapshot.val();
+
+      const newArray = [];
+
+      for (let item in ourDB) {
+        const objectCollection = {
+          key: item,
+          userFoodName: ourDB[item][0].food_name,
+          userPic: ourDB[item][0].photo.highres,
+          altFoodName: ourDB[item][1].food_name,
+          altPic: ourDB[item][1].photo.highres,
+        }
+
+      newArray.push(objectCollection);
+      console.log("MY ARRAY", newArray);
+      }
+      
+      setFood(newArray);
+    
     })
-  }, []);
+
+
+}, []);
+
+
 
   const savedPair = () => {
     const db = getDatabase()
@@ -201,24 +235,42 @@ const handleSubmit = (event) => {
     </Route>
 
     <Route path='/savedPairs'>
-      <main className="savedMain">
+    <main className="savedMain">
+        {console.log("Our Food DB State", food)}
+      
+        <ul>
         {
+          
           food.map((pair)=>{
-            console.log(pair.food_name)
-            // return (
-            //   <div className="savedPair">
-            //     <div className="savedUserfood">
-            //       <p> {pair[0].food_name}</p>
-            //     </div>
+            return (
+              <li className="savedPair">
 
-            //     <div className="savedAltFood">
-            //     <p> {pair[1].food_name}</p>
-            //     </div>
+                {console.log(pair.key)}
 
-            //   </div>
-            //   )
+                <div className="savedUserfood">
+                  <p>{pair.userFoodName}</p>
+                  <div className="savedUserPic">
+                    {
+                      pair.userPic ? <img src={pair.userPic} alt={pair.userFoodName} /> : null
+                    }
+                  </div>
+                </div>
+
+                <div className="savedAltFood">
+                  <p>{pair.altFoodName}</p>
+                  <div className="savedAltPic">
+                    {
+                      pair.altPic ? <img src={pair.altPic} alt={pair.altFoodName} /> : null
+                    }
+                  </div>
+                </div>
+
+              </li>
+              )
             })
+            
           }
+          </ul>
       </main>
     </Route>
 
