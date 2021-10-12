@@ -30,7 +30,6 @@ const handleChange = (event) => {
 const handleSubmit = (event) => {
   event.preventDefault();
   setError('');
-  console.log("You submitted!!!!")
 
   axios({
     headers: {
@@ -45,9 +44,6 @@ const handleSubmit = (event) => {
     },
   })
     .then((inputRes) => {
-
-      console.log('Input Res:', inputRes.data);
-
       return axios({
         headers: {
           "Content-Type": "application/json",
@@ -63,10 +59,7 @@ const handleSubmit = (event) => {
       });
     })
     .then((foodRes) => {
-      console.log('FoodRes:', foodRes.data.foods[0])
-
       setUserFood(foodRes.data.foods[0]);
-
       const searchFoodSugar = foodRes.data.foods[0].nf_sugars
 
       
@@ -96,10 +89,6 @@ const handleSubmit = (event) => {
 
       const suggestionIndex = randomIndex(suggestions);
 
-      console.log("3rd API", suggestions[suggestionIndex]);
-
-
-
       return axios({
         headers: {
           "Content-Type": "application/json",
@@ -115,8 +104,6 @@ const handleSubmit = (event) => {
       });
     })
     .then((altRes) => {
-
-      console.log("4th API", altRes.data.foods[0]);
       setAltFood(altRes.data.foods[0]);
 
 
@@ -159,7 +146,7 @@ const handleSubmit = (event) => {
         altFood
       }
     ])
-    console.log('FOOODDD', food)
+    console.log(food);
   }
 
 
@@ -192,7 +179,7 @@ const handleSubmit = (event) => {
 
 
         <Link to="/savedPairs">
-          <button onClick={savedPair}>View Saved Pairs</button>
+          <button>View Saved Pairs</button>
         </Link>
 
 
@@ -210,7 +197,7 @@ const handleSubmit = (event) => {
           <p> <span>Hey kids!</span> Enter a sweet treat you’re craving into the search form above and we’ll suggest something that you and your parents can feel good about!
           </p>
 
-          <FoodOutput userFood={userFood} altFood={altFood}/>
+          <FoodOutput userFood={userFood} altFood={altFood} savedPair={savedPair}/>
 
       </main>
 
@@ -220,12 +207,22 @@ const handleSubmit = (event) => {
     </Route>
 
     <Route path='/savedPairs'>
-      <main className=''>
+      <main className="savedMain">
+        {
+          food.map((pair)=>{
+            console.log(pair)
+            // return (
+            //   <div className="savedPair">
+            //     <div className="savedUserfood">
+            //       <p> {pair[0].food_name}</p>
+            //     </div>
 
-        <h2>hi</h2>
-          {
-            food.map((pairs)=>{
-              console.log(pairs)
+            //     <div className="savedAltFood">
+            //     <p> {pair[1].food_name}</p>
+            //     </div>
+
+            //   </div>
+            //   )
             })
           }
       </main>
