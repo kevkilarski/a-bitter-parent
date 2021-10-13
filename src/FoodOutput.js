@@ -1,5 +1,8 @@
 import {useState} from 'react';
+
+
 import { lessMore } from './utils';
+
 
 const FoodOutput = (props) => {
 
@@ -50,7 +53,7 @@ const FoodOutput = (props) => {
         props.altFood.food_name ? (
           <div className="foodButtons">
             <button className="foodButton" onClick={props.savedPair}>Save Pair</button>
-            <button className="foodButton">Clear</button>
+
             <button className="foodButton" onClick={handleClick}>Compare</button>
           </div>
         ) : (

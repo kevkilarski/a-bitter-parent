@@ -406,10 +406,6 @@ ul {
 }
 
 .savedUserFood, .savedAltFood {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   text-align: center;
   text-transform: uppercase;
 }
@@ -417,6 +413,8 @@ ul {
 .savedUserPic, .savedAltPic {
   height: 200px;
   width: 200px;
+  border: rgb(179, 29, 159) 10px solid;
+  border-radius: 30px;
 }
 
 .savedUserPic img, .savedAltPic img {
@@ -456,7 +454,46 @@ ul {
       cursor: pointer;
 }
 
+.mainButtons {
+  display: flex;
+  justify-content: space-around;
+  .foodButton {
+    width: 220px;
+    margin-bottom: 10px;
+    font-style: none;
+    background-color: #53c27f;
+    margin-top: 6px;
+    padding: 6px 18px;
+    border-radius: 12px;
+    color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #19362591;
+    font-family: $font-secondary;
+    cursor: pointer;
+  }
+}
+
+.pairsLink {
+  text-decoration: none;
+}
+
 .footer {
   background-color: $color-purple;
   text-align: center;
+}
+
+.savedMain {
+  background-color: hotpink;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    background-color: rgb(255, 176, 215);
+    font-family: $font-secondary;
+    font-size: 38px;
+    color: midnightblue;
+  }
 }
