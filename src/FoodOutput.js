@@ -1,5 +1,9 @@
 import {useState} from 'react';
 
+
+import { lessMore } from './utils';
+
+
 const FoodOutput = (props) => {
 
   const [comparing, setComparing] = useState(false);
@@ -24,16 +28,16 @@ const FoodOutput = (props) => {
                 )
               }
               </div>
-              <p className="nutrient">Sugar: {props.userFood.nf_sugars}g</p>
+              <p className="nutrient">Sugar: {props.userFood.nf_sugars}g </p>
               {
                 comparing ? (
                   <>
-                    <p className="nutrient">Calories: {Math.floor(props.userFood.nf_calories)}</p>
-                    <p className="nutrient">Cholesterol: {props.userFood.nf_cholesterol}mg</p>
-                    <p className="nutrient">Fibre: {props.userFood.nf_dietary_fiber}g</p>
-                    <p className="nutrient">Sodium: {props.userFood.nf_sodium}g</p>
-                    <p className="nutrient">Carbs: {props.userFood.nf_total_carbohydrate}g</p>
-                    <p className="nutrient">Fat: {props.userFood.nf_total_fat}g</p>
+                    <p className="nutrient">Calories: {Math.floor(props.userFood.nf_calories)} </p>
+                    <p className="nutrient">Cholesterol: {props.userFood.nf_cholesterol}mg </p>
+                    <p className="nutrient">Fibre: {props.userFood.nf_dietary_fiber}g </p>
+                    <p className="nutrient">Sodium: {props.userFood.nf_sodium}g </p>
+                    <p className="nutrient">Carbs: {props.userFood.nf_total_carbohydrate}g </p>
+                    <p className="nutrient">Fat: {props.userFood.nf_total_fat}g </p>
                   </>
                 ) : (
                   null
@@ -74,7 +78,7 @@ const FoodOutput = (props) => {
               ) : (
                 <i className="fas fa-pause-circle"></i>
               ) 
-            }</p>
+            } {lessMore(props.altFood.nf_sugars, props.userFood.nf_sugars, 'g')}</p>
             {
               comparing ? (
                 <>
@@ -86,7 +90,7 @@ const FoodOutput = (props) => {
                     ) : (
                       <i className="fas fa-pause-circle"></i>
                     ) 
-                  }</p>
+                  } {lessMore(props.altFood.nf_calories, props.userFood.nf_calories)}</p>
                   <p className="nutrient">Cholesterol: {props.altFood.nf_cholesterol}mg {
                     props.userFood.nf_cholesterol > props.altFood.nf_cholesterol ? (
                       <i className="fas fa-check-circle"></i>
@@ -95,7 +99,7 @@ const FoodOutput = (props) => {
                     ) : (
                       <i className="fas fa-pause-circle"></i>
                     ) 
-                  }</p>
+                  } {lessMore(props.altFood.nf_cholesterol, props.userFood.nf_cholesterol, 'mg')}</p>
                   <p className="nutrient">Fibre: {props.altFood.nf_dietary_fiber}g {
                     props.userFood.nf_dietary_fiber < props.altFood.nf_dietary_fiber ? (
                       <i className="fas fa-check-circle"></i>
@@ -104,7 +108,7 @@ const FoodOutput = (props) => {
                     ) : (
                       <i className="fas fa-pause-circle"></i>
                     ) 
-                  }</p>
+                  } {lessMore(props.altFood.nf_dietary_fiber, props.userFood.nf_dietary_fiber, 'g')}</p>
                   <p className="nutrient">Sodium: {props.altFood.nf_sodium}g {
                     props.userFood.nf_sodium > props.altFood.nf_sodium ? (
                       <i className="fas fa-check-circle"></i>
@@ -113,7 +117,7 @@ const FoodOutput = (props) => {
                     ) : (
                       <i className="fas fa-pause-circle"></i>
                     ) 
-                  }</p>
+                  } {lessMore(props.altFood.nf_sodium, props.userFood.nf_sodium)}</p>
                   <p className="nutrient">Carbs: {props.altFood.nf_total_carbohydrate}g {
                     props.userFood.nf_total_carbohydrate > props.altFood.nf_total_carbohydrate ? (
                       <i className="fas fa-check-circle"></i>
@@ -122,7 +126,7 @@ const FoodOutput = (props) => {
                     ) : (
                       <i className="fas fa-pause-circle"></i>
                     ) 
-                  }</p>
+                  } {lessMore(props.altFood.nf_total_carbohydrate, props.userFood.nf_total_carbohydrate, 'g')}</p>
                   <p className="nutrient">Fat: {props.altFood.nf_total_fat}g {
                     props.userFood.nf_total_fat > props.altFood.nf_total_fat ? (
                       <i className="fas fa-check-circle"></i>
@@ -131,7 +135,7 @@ const FoodOutput = (props) => {
                     ) : (
                       <i className="fas fa-pause-circle"></i>
                     ) 
-                  }</p>
+                  } {lessMore(props.altFood.nf_total_fat, props.userFood.nf_total_fat, 'g')}</p>
                 </>
               ) : (
                 null       

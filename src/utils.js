@@ -18,3 +18,21 @@ export const randomSugar = (searchFoodSugar) => {
   return searchFoodSugar - sugarVal[randomSugarIndex];
 
 }
+
+export const lessMore = (ingredientOne, ingredientTwo, unit = '') => {
+  if(ingredientOne - ingredientTwo === 0) return;
+
+  let message = '';
+  
+  if(ingredientOne - ingredientTwo > 0){
+    message = 'more';
+  } else if(ingredientOne - ingredientTwo < 0) {
+    message = 'less';
+  } 
+
+  const difference = ingredientOne - ingredientTwo;
+
+  const formattedMessage = `(${Math.abs(difference.toFixed(2))}${unit} ${message})`
+  
+  return formattedMessage;
+}
