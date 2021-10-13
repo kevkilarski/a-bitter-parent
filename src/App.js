@@ -197,7 +197,11 @@ const handleSubmit = (event) => {
     console.log(food);
   }
 
-
+  const onClear = () => {
+  setUserFood({});
+  setAltFood({});
+  setUserText('');
+  };
   return (
 
 
@@ -224,13 +228,15 @@ const handleSubmit = (event) => {
           <button>Submit</button>
         </form> */}
 
+        <div className="mainButtons">
 
+          <Link className="pairsLink" to="/savedPairs">
+            <button className="foodButton">View Saved Pairs</button>
+          </Link>
 
-        <Link to="/savedPairs">
-          <button>View Saved Pairs</button>
-        </Link>
+          <button className="foodButton" onClick={onClear}>Clear</button>
 
-
+        </div>
 
       </section>
 
