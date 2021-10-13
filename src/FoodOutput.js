@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const FoodOutput = (props) => {
 
@@ -66,7 +66,7 @@ const FoodOutput = (props) => {
                 props.altFood.photo ? <img src={props.altFood.photo.highres} alt={props.altFood.food_name}/> : null
               }
             </div>
-            <p className="nutrient" className="nutrient">Sugar: {props.altFood.nf_sugars}g {
+            <p className="nutrient">Sugar: {props.altFood.nf_sugars}g {
               props.userFood.nf_sugars > props.altFood.nf_sugars ? (
                 <i className="fas fa-check-circle"></i>
               ) : props.userFood.nf_sugars < props.altFood.nf_sugars ? (

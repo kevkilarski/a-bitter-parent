@@ -17,7 +17,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 function App() {
 
   const [userText, setUserText] = useState('');
-  const [error, setError] = useState('');
+
   const [userFood, setUserFood] = useState({});
   const [altFood, setAltFood] = useState({});
   const [food, setFood] = useState([]);
@@ -29,7 +29,6 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  setError('');
 
   axios({
     headers: {
@@ -145,7 +144,6 @@ const handleSubmit = (event) => {
       setAltFood({});
       setUserText('');
       alert(error.message);
-      setError(error);
       console.log(error.message);
     });
 }
