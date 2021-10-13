@@ -25,16 +25,16 @@ const FoodOutput = (props) => {
                 )
               }
               </div>
-              <p className="nutrient">Sugar: {props.userFood.nf_sugars}g {lessMore(props.userFood.nf_sugars, props.altFood.nf_sugars, 'g')}</p>
+              <p className="nutrient">Sugar: {props.userFood.nf_sugars}g </p>
               {
                 comparing ? (
                   <>
-                    <p className="nutrient">Calories: {Math.floor(props.userFood.nf_calories)} {lessMore(props.userFood.nf_calories, props.altFood.nf_calories)}</p>
-                    <p className="nutrient">Cholesterol: {props.userFood.nf_cholesterol}mg {lessMore(props.userFood.nf_cholesterol, props.altFood.nf_cholesterol, 'mg')}</p>
-                    <p className="nutrient">Fibre: {props.userFood.nf_dietary_fiber}g {lessMore(props.userFood.nf_dietary_fiber, props.altFood.nf_dietary_fiber, 'g')}</p>
-                    <p className="nutrient">Sodium: {props.userFood.nf_sodium}g {lessMore(props.userFood.nf_sodium, props.altFood.nf_sodium, 'g')}</p>
-                    <p className="nutrient">Carbs: {props.userFood.nf_total_carbohydrate}g {lessMore(props.userFood.nf_total_carbohydrate, props.altFood.nf_total_carbohydrate, 'g')}</p>
-                    <p className="nutrient">Fat: {props.userFood.nf_total_fat}g {lessMore(props.userFood.nf_total_fat, props.altFood.nf_total_fat, 'g')}</p>
+                    <p className="nutrient">Calories: {Math.floor(props.userFood.nf_calories)} </p>
+                    <p className="nutrient">Cholesterol: {props.userFood.nf_cholesterol}mg </p>
+                    <p className="nutrient">Fibre: {props.userFood.nf_dietary_fiber}g </p>
+                    <p className="nutrient">Sodium: {props.userFood.nf_sodium}g </p>
+                    <p className="nutrient">Carbs: {props.userFood.nf_total_carbohydrate}g </p>
+                    <p className="nutrient">Fat: {props.userFood.nf_total_fat}g </p>
                   </>
                 ) : (
                   null
