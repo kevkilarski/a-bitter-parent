@@ -241,8 +241,7 @@ const handleSubmit = (event) => {
       </section>
 
       <main className="food">
-        
-   
+      
           <p> <span>Hey kids!</span> Enter a sweet treat you’re craving into the search form above and we’ll suggest something that you and your parents can feel good about!
           </p>
 
