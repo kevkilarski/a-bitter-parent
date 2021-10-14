@@ -40,8 +40,8 @@ function App() {
     // 1st API call
     axios({
       headers: {
-        "x-app-id": "7dae18ec",
-        "x-app-key": "5a4b147254b31f911e70443e46a963bb",
+        "-app-ixd": "4a421124",
+        "x-app-key": "7a4fdfd0cf30ae52081b0f6fe40f7ce1",
       },
       method: "GET",
       url: `https://trackapi.nutritionix.com/v2/search/instant`,
@@ -60,8 +60,8 @@ function App() {
         return axios({
           headers: {
             "Content-Type": "application/json",
-            "x-app-id": "7dae18ec",
-            "x-app-key": "5a4b147254b31f911e70443e46a963bb",
+            "x-app-id": "4a421124",
+            "x-app-key": "7a4fdfd0cf30ae52081b0f6fe40f7ce1",
           },
           data: {
             query: inputRes.data.common[0].food_name,
@@ -89,8 +89,8 @@ function App() {
         return axios({
           headers: {
             "Content-Type": "application/json",
-            "x-app-id": "7dae18ec",
-            "x-app-key": "5a4b147254b31f911e70443e46a963bb",
+            "x-app-id": "4a421124",
+            "x-app-key": "7a4fdfd0cf30ae52081b0f6fe40f7ce1",
           },
           data: {
             query: `${randomLetter()}`,
@@ -116,8 +116,8 @@ function App() {
         return axios({
           headers: {
             "Content-Type": "application/json",
-            "x-app-id": "7dae18ec",
-            "x-app-key": "5a4b147254b31f911e70443e46a963bb",
+            "x-app-id": "4a421124",
+            "x-app-key": "7a4fdfd0cf30ae52081b0f6fe40f7ce1",
           },
           data: {
             query: suggestions[suggestionIndex].food_name,
