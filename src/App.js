@@ -40,7 +40,7 @@ function App() {
     // 1st API call
     axios({
       headers: {
-        "-app-ixd": "6a904ca1",
+        "x-app-id": "6a904ca1",
         "x-app-key": "c60b899733e952e93a3c38f50990f697",
       },
       method: "GET",
