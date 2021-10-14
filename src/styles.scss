@@ -330,7 +330,7 @@ form {
   }
 }
 
-.foodContainer{
+.foodContainer {
   display: flex;
 }
 
@@ -356,15 +356,12 @@ form {
     }
 
     .nutrient {
-      // align-self: flex-start;
-      // margin-left: calc(50% - 75px);
       padding: 5px 0;
     }
   }
 
   .foodButtons {
     display: flex;
-    // flex-direction: column;
     justify-content: space-around;
     height: 60%;
 
@@ -409,29 +406,31 @@ ul {
 
 .savedPair {
   display: flex;
-  // width: 300px;
 }
 
-.savedUserFood, .savedAltFood {
+.savedUserFood,
+.savedAltFood {
   text-align: center;
   text-transform: uppercase;
-    p {
-      padding: 5px;
-    }
+  p {
+    padding: 5px;
+  }
 }
 
-.savedUserPic, .savedAltPic {
+.savedUserPic,
+.savedAltPic {
   height: 200px;
   width: 200px;
   border-radius: 30px;
 }
 
-.savedUserPic img, .savedAltPic img {
+.savedUserPic img,
+.savedAltPic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 30px;
-} 
+}
 
 .savedUserPic img {
   border-radius: 30px 0 0 30px;
@@ -507,8 +506,7 @@ ul {
   }
 }
 
-
-// Media queries 
+// Media queries
 
 @media (max-width: 1200px) {
   .foodSection .foodWrapper .nutrient {
@@ -574,11 +572,11 @@ ul {
 }
 
 @media (max-width: 420px) {
-
-  .savedUserFood p, .savedAltFood p {
+  .savedUserFood p,
+  .savedAltFood p {
     display: none;
   }
-  .savedUserPic, 
+  .savedUserPic,
   .savedAltPic {
     height: 120px;
     width: 120px;
