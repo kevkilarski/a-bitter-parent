@@ -298,6 +298,7 @@ html {
   font-size: 5rem;
   color: #5c6694;
   font-weight: bold;
+  text-align: center;
 }
 .header h1 span {
   font-style: italic;
@@ -330,25 +331,28 @@ form .submitButton {
   margin-top: 6px;
   padding: 6px 18px;
   border-radius: 12px;
-  color: #19362591;
+  color: #222222;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid #19362591;
   font-family: "Maitree", serif;
+  cursor: pointer;
 }
 
 .food {
   background-color: #ffb454;
-  height: calc(100vh - 28vh);
+  min-height: calc(100vh - 28vh);
   font-family: "Maitree", serif;
   display: flex;
+  flex-direction: column;
   text-align: center;
   padding-top: 28px;
 }
 .food p {
   color: #6b2718;
   font-weight: bold;
+  padding: 10px;
 }
 .food p span {
   font-weight: bolder;
@@ -356,6 +360,246 @@ form .submitButton {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.foodContainer {
+  display: flex;
+}
+
+.foodSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.foodSection .foodWrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.foodSection .foodWrapper .foodTitle {
+  text-transform: uppercase;
+  font-size: 25px;
+  padding: 15px 0;
+}
+.foodSection .foodWrapper .fa-pause-circle {
+  transform: rotate(90deg);
+}
+.foodSection .foodWrapper .nutrient {
+  padding: 5px 0;
+}
+.foodSection .foodButtons {
+  display: flex;
+  justify-content: space-around;
+  height: 60%;
+}
+.foodSection .foodButtons .foodButton {
+  width: 150px;
+  margin-bottom: 10px;
+  font-style: none;
+  background-color: #53c27f;
+  margin-top: 6px;
+  padding: 6px 18px;
+  border-radius: 12px;
+  color: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #19362591;
+  font-family: "Maitree", serif;
+  cursor: pointer;
+}
+.foodSection .foodPicture {
+  height: 150px;
+  width: 150px;
+}
+.foodSection .foodPicture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.savedPair {
+  display: flex;
+}
+
+.savedUserFood,
+.savedAltFood {
+  text-align: center;
+  text-transform: uppercase;
+}
+.savedUserFood p,
+.savedAltFood p {
+  padding: 5px;
+}
+
+.savedUserPic,
+.savedAltPic {
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+}
+
+.savedUserPic img,
+.savedAltPic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+
+.savedUserPic img {
+  border-radius: 30px 0 0 30px;
+}
+
+.savedAltPic img {
+  border-radius: 0 30px 30px 0;
+  border-left: 2px solid black;
+}
+
+.homeLink {
+  text-decoration: none;
+}
+
+.homeButton {
+  width: 150px;
+  margin: 15px auto;
+  font-style: none;
+  background-color: #53c27f;
+  padding: 6px 18px;
+  border-radius: 12px;
+  color: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #19362591;
+  font-family: "Maitree", serif;
+  cursor: pointer;
+}
+
+.mainButtons {
+  display: flex;
+  justify-content: space-around;
+}
+.mainButtons .foodButton {
+  width: 220px;
+  margin-bottom: 10px;
+  font-style: none;
+  background-color: #53c27f;
+  margin-top: 6px;
+  padding: 6px 18px;
+  border-radius: 12px;
+  color: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #19362591;
+  font-family: "Maitree", serif;
+  cursor: pointer;
+}
+
+.pairsLink {
+  text-decoration: none;
+}
+
 .footer {
   background-color: #aebdff;
+  text-align: center;
+}
+
+.savedMain {
+  background-color: hotpink;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.savedMain h2 {
+  background-color: #ffb0d7;
+  font-family: "Maitree", serif;
+  font-size: 38px;
+  color: midnightblue;
+  padding: 10px 0;
+}
+
+@media (max-width: 1200px) {
+  .foodSection .foodWrapper .nutrient {
+    margin: 0;
+    align-self: center;
+  }
+}
+@media (max-width: 830px) {
+  .foodSection .foodWrapper {
+    padding-bottom: 35px;
+  }
+}
+@media (max-width: 650px) {
+  .mainButtons {
+    padding-top: 15px;
+  }
+
+  .food {
+    padding-top: 15px;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .mainButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foodContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 430px) {
+  .header h1 {
+    font-size: 3rem;
+    padding: 20px 0;
+  }
+
+  .footer {
+    padding: 15px;
+  }
+}
+@media (max-width: 320px) {
+  .header h1 {
+    font-size: 2rem;
+    padding: 24px 0;
+  }
+
+  form input {
+    padding: 0;
+  }
+
+  .foodSection .foodButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 420px) {
+  .savedUserFood p,
+.savedAltFood p {
+    display: none;
+  }
+
+  .savedUserPic,
+.savedAltPic {
+    height: 120px;
+    width: 120px;
+  }
 }/*# sourceMappingURL=styles.css.map */
