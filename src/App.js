@@ -184,18 +184,20 @@ function App() {
 
   return (
     <Router>
-      <div className="wrapper">
 
-        {/* HEADER */}
-        <header className="header">
+      {/* HEADER */}
+      <header className="header">
+        <div className="wrapper">
           <h1>
             A <span>Bitter</span> Parent
           </h1>
-        </header>
+        </div>
+      </header>
 
-        {/* HOME - DISPLAY ON LOAD */}
-        <Route exact path="/">
-          <section className="search">
+      {/* HOME - DISPLAY ON LOAD */}
+      <Route exact path="/">
+        <section className="search">
+          <div className="wrapper">
 
             <SearchForm
               userText={userText}
@@ -210,15 +212,14 @@ function App() {
                 <button className="foodButton">View Saved Pairs</button>
               </Link>
 
-              <button className="foodButton" onClick={onClear}>
-                Clear
-              </button>
+              <button className="foodButton" onClick={onClear}>Clear</button>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <main className="food">
+        <main className="food">
+          <div className="wrapper">
             <p>
-              {" "}
               <span>Hey kids!</span> Enter a sweet treat you’re craving into the
               search form above and we’ll suggest something that you and your
               parents can feel good about!
@@ -229,17 +230,22 @@ function App() {
               altFood={altFood}
               savedPair={savedPair}
             />
-          </main>
+          </div>
+        </main>
 
-          <footer className="footer">
-            Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin
-            Kilarski at Juno College using the Nutritionix API and Firebase.
-          </footer>
-        </Route>
+        <footer className="footer">
+          <div className="wrapper">
+            <p>Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin
+            Kilarski at Juno College using the Nutritionix API and Firebase.</p>
+          </div>
+        </footer>
+      </Route>
 
-        {/* SAVED PAIRS ROUTE */}
-        <Route path="/savedPairs">
-          <main className="savedMain">
+      {/* SAVED PAIRS ROUTE */}
+      <Route path="/savedPairs">
+        <main className="savedMain">
+          <div className="wrapper">
+
             <h2>Your Saved Pairs</h2>
 
             <Link className="homeLink" to="/">
@@ -272,9 +278,10 @@ function App() {
                 );
               })}
             </ul>
-          </main>
-        </Route>
-      </div>
+          </div>
+        </main>
+      </Route>
+      
     </Router>
   );
 }
