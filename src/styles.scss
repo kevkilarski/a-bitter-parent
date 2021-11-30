@@ -1,3 +1,5 @@
+// SETUP
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -229,24 +231,55 @@ html {
 }
 @import url("https://fonts.googleapis.com/css2?family=Maitree&family=Montserrat&display=swap%27");
 
-// GENERAL
-h1 {
-  margin: 0;
-}
-
-// TYPOGRAPHY
+// SASS - TYPOGRAPHY
 
 $font-primary: "Montserrat", sans-serif;
 $font-secondary: "Maitree", serif;
 
-// COLORS
 
-$color-green: #8df8b7;
+// SASS - COLORS
+
+$color-green: #a3f1bd;
+$color-dark-green: #71dd9c;
 $color-purple: #aebdff;
+$color-dark-purple: #708bff;
 $color-orange: #ffb454;
+$color-white: #ffffffef;
+$color-black: #363636;
+$color-grey: #9a9b9a;
 
-html {
-  background-color: rgb(245, 239, 239);
+
+// GENERAL STYLING
+
+body {
+  // background-color: $color-white;
+  background: linear-gradient(270deg, $color-white 1%,  $color-purple 12%, $color-purple 88%, $color-white 100%);
+}
+
+h1, p {
+  margin: 0;
+  color: $color-black;
+}
+
+button {
+  // font-style: none;
+  background-color: $color-green;
+  // margin-top: 6px;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  // color: $color-black;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  border: 0.1rem solid $color-grey;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: $color-dark-green;
 }
 
 .wrapper {
@@ -255,27 +288,55 @@ html {
   margin: 0 auto;
 }
 
-.header {
-  background-color: $color-purple;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    font-family: $font-primary;
-    font-size: 5rem;
-    color: #5c6694;
-    font-weight: bold;
-    text-align: center;
-    span {
-      font-style: italic;
-      font-family: Georgia, "Times New Roman", Times, serif;
+// TYPOGRAPHY STYLING
+
+h1 {
+  font-family: $font-primary;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+p {
+  font-family: $font-secondary;
+  font-size: 1.4rem;
+}
+
+
+// HEADER
+
+header {
+  padding: 3rem 0;
+  height: 50vh;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5rem solid $color-white;
+    border-right: 0.5rem solid $color-orange;
+    border-bottom: 0.5rem solid $color-orange;
+    h1 {
+      margin: 1rem;
+      padding: 0.5rem 1rem 0;
+      // span {
+      //   font-style: italic;
+      // }
+    }
+    p {
+      padding: 1rem 0 2.5rem;
+      width: 80%;
+      text-align: center;
+      span {
+        font-style: italic;
+      }
     }
   }
 }
 
+// Search Form Component
+
 .search {
-  background-color: $color-green;
+  height: 30vh;
 }
 
 form {
@@ -283,36 +344,35 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 22px;
-
+  padding-top: 1rem;
   input {
-    border: 3px solid #19362591;
-    border-radius: 1rem;
-    background-color: #caf8dc;
-    padding: 4px 34px;
+    padding: 0.5rem 3.5rem;
     text-align: center;
-    color: #5a5a5a;
-    font-family: $font-secondary;
+    border: 0.2rem solid $color-orange;
+    border-radius: 1rem;
+    color: $color-black;
+    font-size: 1.4rem;
   }
   .submitButton {
-    font-style: none;
-    background-color: #53c27f;
-    margin-top: 6px;
-    padding: 6px 18px;
-    border-radius: 12px;
-    color: rgb(34, 34, 34);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #19362591;
-    font-family: $font-secondary;
-    cursor: pointer;
+    margin-top: 0.7rem;
   }
 }
 
+.mainButtons {
+  display: flex;
+  justify-content: space-around;
+  .foodButton {
+    width: 14rem;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0;
+  }
+}
+
+
+// OUTPUT
+
 .food {
-  background-color: $color-orange;
-  min-height: calc(100vh - 28vh);
+  min-height: calc(100vh - 50vh - 30vh - 5vh);
   font-family: $font-secondary;
   display: flex;
   flex-direction: column;
@@ -330,16 +390,62 @@ form {
   }
 }
 
-.foodContainer {
+
+// FOOTER
+
+.footer {
   display: flex;
+  align-items: center;
+  text-align: center;
+  height: 5vh;
+  // background-color: $color-purple;
+  position: relative;
+  ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // background: $color-purple;
+    opacity: 0.2;
+    z-index: -1;
+  }
+  p {
+    font-size: 1rem;
+  }
 }
 
-.foodSection {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Food Output Component
+
+
+
+.foodOutputSection {
   display: flex;
   flex-direction: column;
   height: 100%;
-
-  .foodWrapper {
+  .foodButtons {
+    display: flex;
+    justify-content: space-around;
+  }
+  .foodContainer {
+    display: flex;
+  
+  .wrapper {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -359,29 +465,8 @@ form {
       padding: 5px 0;
     }
   }
-
-  .foodButtons {
-    display: flex;
-    justify-content: space-around;
-    height: 60%;
-
-    .foodButton {
-      width: 150px;
-      margin-bottom: 10px;
-      font-style: none;
-      background-color: #53c27f;
-      margin-top: 6px;
-      padding: 6px 18px;
-      border-radius: 12px;
-      color: rgb(34, 34, 34);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid #19362591;
-      font-family: $font-secondary;
-      cursor: pointer;
-    }
   }
+  
 
   .foodPicture {
     height: 150px;
@@ -461,35 +546,13 @@ ul {
   cursor: pointer;
 }
 
-.mainButtons {
-  display: flex;
-  justify-content: space-around;
-  .foodButton {
-    width: 220px;
-    margin-bottom: 10px;
-    font-style: none;
-    background-color: #53c27f;
-    margin-top: 6px;
-    padding: 6px 18px;
-    border-radius: 12px;
-    color: rgb(34, 34, 34);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #19362591;
-    font-family: $font-secondary;
-    cursor: pointer;
-  }
-}
+
 
 .pairsLink {
   text-decoration: none;
 }
 
-.footer {
-  background-color: $color-purple;
-  text-align: center;
-}
+
 
 .savedMain {
   background-color: hotpink;

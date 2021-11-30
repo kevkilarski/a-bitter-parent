@@ -11,7 +11,7 @@ const FoodOutput = (props) => {
   };
 
   return (
-    <section className="foodSection">
+    <section className="foodOutputSection">
       {/* ONLY RENDER SAVE AND COMPARE BUTTONS IF A PROPER SUGGESTED FOOD HAS RETURNED FROM THE API CALL */}
       {props.altFood.food_name ? (
         <div className="foodButtons">

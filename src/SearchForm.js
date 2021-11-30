@@ -9,7 +9,7 @@ const SearchForm = (props) => {
           value={props.userText}
           onChange={props.handleChange}
           id="formInput"
-          placeholder="Choose your Food"
+          placeholder="What are you craving?"
           required
         />
         <button type="submit" className="submitButton">
