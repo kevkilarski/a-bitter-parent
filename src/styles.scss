@@ -391,6 +391,56 @@ form {
 }
 
 
+
+
+
+
+
+
+// Food Output Component
+
+.foodOutputSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .foodButtons {
+    display: flex;
+    justify-content: space-around;
+  }
+  .foodContainer {
+    display: flex;
+  }
+  .foodWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    .foodTitle {
+      text-transform: uppercase;
+      font-size: 25px;
+      padding: 15px 0;
+    }
+    .foodPicture {
+      height: 150px;
+      width: 150px;
+    }
+    .foodPicture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+    .fa-pause-circle {
+      transform: rotate(90deg);
+    }
+    .nutrient {
+      padding: 5px 0;
+    }
+  }
+}
+
+
 // FOOTER
 
 .footer {
@@ -417,69 +467,7 @@ form {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Food Output Component
-
-
-
-.foodOutputSection {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  .foodButtons {
-    display: flex;
-    justify-content: space-around;
-  }
-  .foodContainer {
-    display: flex;
-  
-  .wrapper {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .foodTitle {
-      text-transform: uppercase;
-      font-size: 25px;
-      padding: 15px 0;
-    }
-
-    .fa-pause-circle {
-      transform: rotate(90deg);
-    }
-
-    .nutrient {
-      padding: 5px 0;
-    }
-  }
-  }
-  
-
-  .foodPicture {
-    height: 150px;
-    width: 150px;
-  }
-
-  .foodPicture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px;
-  }
-}
+// SAVED PAIRS
 
 ul {
   display: flex;
@@ -526,24 +514,8 @@ ul {
   border-left: 2px solid black;
 }
 
-.homeLink {
-  text-decoration: none;
-}
-
 .homeButton {
-  width: 150px;
-  margin: 15px auto;
-  font-style: none;
-  background-color: #53c27f;
-  padding: 6px 18px;
-  border-radius: 12px;
-  color: rgb(34, 34, 34);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #19362591;
-  font-family: $font-secondary;
-  cursor: pointer;
+  margin-top: 0.75rem;
 }
 
 
@@ -555,7 +527,6 @@ ul {
 
 
 .savedMain {
-  background-color: hotpink;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -568,6 +539,10 @@ ul {
     padding: 10px 0;
   }
 }
+
+
+
+
 
 // Media queries
 

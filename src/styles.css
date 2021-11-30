@@ -391,6 +391,48 @@ form .submitButton {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.foodOutputSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.foodOutputSection .foodButtons {
+  display: flex;
+  justify-content: space-around;
+}
+.foodOutputSection .foodContainer {
+  display: flex;
+}
+.foodOutputSection .foodWrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+.foodOutputSection .foodWrapper .foodTitle {
+  text-transform: uppercase;
+  font-size: 25px;
+  padding: 15px 0;
+}
+.foodOutputSection .foodWrapper .foodPicture {
+  height: 150px;
+  width: 150px;
+}
+.foodOutputSection .foodWrapper .foodPicture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
+.foodOutputSection .foodWrapper .fa-pause-circle {
+  transform: rotate(90deg);
+}
+.foodOutputSection .foodWrapper .nutrient {
+  padding: 5px 0;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -410,47 +452,6 @@ form .submitButton {
 }
 .footer p {
   font-size: 1rem;
-}
-
-.foodOutputSection {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.foodOutputSection .foodButtons {
-  display: flex;
-  justify-content: space-around;
-}
-.foodOutputSection .foodContainer {
-  display: flex;
-}
-.foodOutputSection .foodContainer .wrapper {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.foodOutputSection .foodContainer .wrapper .foodTitle {
-  text-transform: uppercase;
-  font-size: 25px;
-  padding: 15px 0;
-}
-.foodOutputSection .foodContainer .wrapper .fa-pause-circle {
-  transform: rotate(90deg);
-}
-.foodOutputSection .foodContainer .wrapper .nutrient {
-  padding: 5px 0;
-}
-.foodOutputSection .foodPicture {
-  height: 150px;
-  width: 150px;
-}
-.foodOutputSection .foodPicture img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 30px;
 }
 
 ul {
@@ -500,24 +501,8 @@ ul {
   border-left: 2px solid black;
 }
 
-.homeLink {
-  text-decoration: none;
-}
-
 .homeButton {
-  width: 150px;
-  margin: 15px auto;
-  font-style: none;
-  background-color: #53c27f;
-  padding: 6px 18px;
-  border-radius: 12px;
-  color: #222222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #19362591;
-  font-family: "Maitree", serif;
-  cursor: pointer;
+  margin-top: 0.75rem;
 }
 
 .pairsLink {
@@ -525,7 +510,6 @@ ul {
 }
 
 .savedMain {
-  background-color: hotpink;
   display: flex;
   text-align: center;
   flex-direction: column;
