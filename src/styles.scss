@@ -293,7 +293,6 @@ button:hover {
 h1 {
   font-family: $font-primary;
   font-size: 6rem;
-  font-weight: bold;
 }
 
 p {
@@ -315,6 +314,7 @@ header {
     border: 0.5rem solid $color-white;
     border-right: 0.5rem solid $color-orange;
     border-bottom: 0.5rem solid $color-orange;
+    background: rgb(240, 224, 202);
     h1 {
       margin: 1rem;
       padding: 0.5rem 1rem 0;
@@ -323,7 +323,7 @@ header {
       // }
     }
     p {
-      padding: 1rem 0 2.5rem;
+      padding: 0.75rem 0 2.5rem;
       width: 80%;
       text-align: center;
       span {
@@ -333,7 +333,8 @@ header {
   }
 }
 
-// Search Form Component
+
+// INPUT
 
 .search {
   height: 30vh;
@@ -391,13 +392,7 @@ form {
 }
 
 
-
-
-
-
-
-
-// Food Output Component
+// OUTPUT - Food Output Component
 
 .foodOutputSection {
   display: flex;
@@ -448,7 +443,6 @@ form {
   align-items: center;
   text-align: center;
   height: 5vh;
-  // background-color: $color-purple;
   position: relative;
   ::after {
     content: '';
@@ -457,7 +451,6 @@ form {
     bottom: 0;
     left: 0;
     right: 0;
-    // background: $color-purple;
     opacity: 0.2;
     z-index: -1;
   }
@@ -467,61 +460,56 @@ form {
 }
 
 
-// SAVED PAIRS
 
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 30px;
-  margin: 40px 0;
-}
 
-.savedPair {
-  display: flex;
-}
 
-.savedUserFood,
-.savedAltFood {
-  text-align: center;
-  text-transform: uppercase;
-  p {
-    padding: 5px;
+
+
+// SAVED PAIRS COMPONENT
+
+.savedMain {
+  .homeButton {
+    margin-top: 0.75rem;
   }
-}
-
-.savedUserPic,
-.savedAltPic {
-  height: 200px;
-  width: 200px;
-  border-radius: 30px;
-}
-
-.savedUserPic img,
-.savedAltPic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.savedUserPic img {
-  border-radius: 30px 0 0 30px;
-}
-
-.savedAltPic img {
-  border-radius: 0 30px 30px 0;
-  border-left: 2px solid black;
-}
-
-.homeButton {
-  margin-top: 0.75rem;
-}
-
-
-
-.pairsLink {
-  text-decoration: none;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    margin: 40px 0;
+    border: 5px solid pink;
+    .savedPair {
+      display: flex;
+      .savedUserFood,
+      .savedAltFood {
+        text-align: center;
+        text-transform: uppercase;
+        p {
+        padding: 5px;
+        }
+      }
+    .savedUserPic,
+    .savedAltPic {
+      height: 200px;
+      width: 200px;
+      border-radius: 30px;
+    }
+    .savedUserPic img,
+    .savedAltPic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+    .savedUserPic img {
+      border-radius: 30px 0 0 30px;
+    }
+    .savedAltPic img {
+      border-radius: 0 30px 30px 0;
+      border-left: 2px solid black;
+    }
+    }
+  }
 }
 
 

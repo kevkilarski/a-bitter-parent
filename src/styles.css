@@ -305,7 +305,6 @@ button:hover {
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 6rem;
-  font-weight: bold;
 }
 
 p {
@@ -325,13 +324,14 @@ header .wrapper {
   border: 0.5rem solid #ffffffef;
   border-right: 0.5rem solid #ffb454;
   border-bottom: 0.5rem solid #ffb454;
+  background: #f0e0ca;
 }
 header .wrapper h1 {
   margin: 1rem;
   padding: 0.5rem 1rem 0;
 }
 header .wrapper p {
-  padding: 1rem 0 2.5rem;
+  padding: 0.75rem 0 2.5rem;
   width: 80%;
   text-align: center;
 }
@@ -454,59 +454,49 @@ form .submitButton {
   font-size: 1rem;
 }
 
-ul {
+.savedMain .homeButton {
+  margin-top: 0.75rem;
+}
+.savedMain ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 30px;
   margin: 40px 0;
+  border: 5px solid pink;
 }
-
-.savedPair {
+.savedMain ul .savedPair {
   display: flex;
 }
-
-.savedUserFood,
-.savedAltFood {
+.savedMain ul .savedPair .savedUserFood,
+.savedMain ul .savedPair .savedAltFood {
   text-align: center;
   text-transform: uppercase;
 }
-.savedUserFood p,
-.savedAltFood p {
+.savedMain ul .savedPair .savedUserFood p,
+.savedMain ul .savedPair .savedAltFood p {
   padding: 5px;
 }
-
-.savedUserPic,
-.savedAltPic {
+.savedMain ul .savedPair .savedUserPic,
+.savedMain ul .savedPair .savedAltPic {
   height: 200px;
   width: 200px;
   border-radius: 30px;
 }
-
-.savedUserPic img,
-.savedAltPic img {
+.savedMain ul .savedPair .savedUserPic img,
+.savedMain ul .savedPair .savedAltPic img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 30px;
 }
-
-.savedUserPic img {
+.savedMain ul .savedPair .savedUserPic img {
   border-radius: 30px 0 0 30px;
 }
-
-.savedAltPic img {
+.savedMain ul .savedPair .savedAltPic img {
   border-radius: 0 30px 30px 0;
   border-left: 2px solid black;
-}
-
-.homeButton {
-  margin-top: 0.75rem;
-}
-
-.pairsLink {
-  text-decoration: none;
 }
 
 .savedMain {
