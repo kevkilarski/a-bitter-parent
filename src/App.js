@@ -272,7 +272,7 @@ function App() {
       {/* FOOTER */}
       <footer className="footer">
         <div className="wrapper">
-          <p>Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin Kilarski<span className="break">using the Nutritionix API, React, and Firebase.</span>
+          <p>Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin Kilarski<span className="break">at Juno College using the Nutritionix API, React, and Firebase.</span>
           </p>
         </div>
       </footer>
