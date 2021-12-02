@@ -252,7 +252,6 @@ $color-grey: #9a9b9a;
 // GENERAL STYLING
 
 body {
-  // background-color: $color-white;
   background: linear-gradient(270deg, $color-white 1%,  $color-purple 12%, $color-purple 88%, $color-white 100%);
 }
 
@@ -262,15 +261,9 @@ h1, p {
 }
 
 button {
-  // font-style: none;
   background-color: $color-green;
-  // margin-top: 6px;
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
-  // color: $color-black;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   border: 0.1rem solid $color-grey;
   font-family: $font-secondary;
   font-size: 1.2rem;
@@ -286,6 +279,10 @@ button:hover {
   max-width: 1200px;
   width: 85%;
   margin: 0 auto;
+}
+
+.break {
+  display: block;
 }
 
 // TYPOGRAPHY STYLING
@@ -305,7 +302,7 @@ p {
 
 header {
   padding: 3rem 0;
-  height: 50vh;
+  min-height: 50vh;
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -314,13 +311,11 @@ header {
     border: 0.5rem solid $color-white;
     border-right: 0.5rem solid $color-orange;
     border-bottom: 0.5rem solid $color-orange;
-    background: rgb(240, 224, 202);
+    background: rgb(243, 239, 219);
     h1 {
       margin: 1rem;
       padding: 0.5rem 1rem 0;
-      // span {
-      //   font-style: italic;
-      // }
+
     }
     p {
       padding: 0.75rem 0 2.5rem;
@@ -333,11 +328,10 @@ header {
   }
 }
 
-
 // INPUT
 
 .search {
-  height: 30vh;
+  min-height: 30vh;
 }
 
 form {
@@ -373,7 +367,7 @@ form {
 // OUTPUT
 
 .food {
-  min-height: calc(100vh - 50vh - 30vh - 5vh);
+  min-height: calc(100vh - 50vh - 30vh - 7vh);
   font-family: $font-secondary;
   display: flex;
   flex-direction: column;
@@ -417,24 +411,77 @@ form {
       padding: 15px 0;
     }
     .foodPicture {
-      height: 150px;
-      width: 150px;
+      height: 7.5rem;
+      width: 7.5rem;
     }
     .foodPicture img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 30px;
+      border-radius: 1.5rem;
     }
     .fa-pause-circle {
       transform: rotate(90deg);
     }
     .nutrient {
-      padding: 5px 0;
+      padding: 0.25rem 0;
     }
   }
 }
 
+// SAVED PAIRS COMPONENT
+
+.savedMain {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    font-family: $font-secondary;
+    font-size: 2rem;
+    padding: 0.3rem 0;
+  }
+  .homeButton {
+    margin-top: 0.75rem;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    .savedPair {
+      display: flex;
+      .savedUserFood,
+      .savedAltFood {
+        text-align: center;
+        text-transform: capitalize;
+        p {
+        padding: 0.8rem 0;
+        font-size: 1rem;
+        }
+      }
+    .savedUserPic,
+    .savedAltPic {
+      height: 10rem;
+      width: 10rem;
+    }
+    .savedUserPic img,
+    .savedAltPic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .savedUserPic img {
+      border-radius: 30px 0 0 30px;
+    }
+    .savedAltPic img {
+      border-radius: 0 30px 30px 0;
+      border-left: 0.15rem solid black;
+    }
+    }
+  }
+}
 
 // FOOTER
 
@@ -442,7 +489,7 @@ form {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 5vh;
+  height: 7vh;
   position: relative;
   ::after {
     content: '';
@@ -459,58 +506,69 @@ form {
   }
 }
 
+// MEDIA QUERIES
 
-
-
-
-
-
-// SAVED PAIRS COMPONENT
-
-.savedMain {
-  .homeButton {
-    margin-top: 0.75rem;
+@media (max-width: 1250px) {
+  h1 {
+    font-size: 4.5rem;
   }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 30px;
-    margin: 40px 0;
-    border: 5px solid pink;
-    .savedPair {
-      display: flex;
-      .savedUserFood,
-      .savedAltFood {
-        text-align: center;
-        text-transform: uppercase;
-        p {
-        padding: 5px;
-        }
+}
+
+@media (max-width: 1000px) {
+  // .foodSection .foodWrapper {
+  //   padding-bottom: 35px;
+  // }
+  
+  header {
+    min-height: 40vh;
+    .wrapper {
+      h1 {
+        font-size: 3.2rem;
       }
-    .savedUserPic,
-    .savedAltPic {
-      height: 200px;
-      width: 200px;
-      border-radius: 30px;
-    }
-    .savedUserPic img,
-    .savedAltPic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 30px;
-    }
-    .savedUserPic img {
-      border-radius: 30px 0 0 30px;
-    }
-    .savedAltPic img {
-      border-radius: 0 30px 30px 0;
-      border-left: 2px solid black;
-    }
+      p {
+        font-size: 1.2rem;
+        padding: 0.1rem 0 1.5rem;
+      }
     }
   }
 }
+
+@media (max-width: 720px) {
+  // .mainButtons {
+  //   padding-top: 15px;
+  // }
+  // .food {
+  //   padding-top: 15px;
+  // }
+  header {
+    // height: 0;
+    padding-bottom: 2rem;
+    .wrapper {
+      h1 {
+        font-size: 2.5rem;
+        // width: 100%;
+        padding: 0;
+        .blockMedia {
+          display: block;
+        }
+      }
+      p {
+        font-size: 1rem;
+        padding: 0.1rem 0 1.5rem;
+      }
+    }
+  }
+
+  // .savedMain {
+  //   min-height: 50vh;
+  //   ul {  
+  //     .savedUserPic,
+  //     .savedAltPic {
+  //       height: 4rem;
+  //       width: 4rem;
+  //     }
+  //   }
+  // }
 
 
 
@@ -520,106 +578,119 @@ form {
   flex-direction: column;
   justify-content: center;
   h2 {
-    background-color: rgb(255, 176, 215);
     font-family: $font-secondary;
-    font-size: 38px;
-    color: midnightblue;
-    padding: 10px 0;
+    font-size: 2rem;
+    padding: 0.3rem 0;
+  }
+  .homeButton {
+    margin-top: 0.75rem;
+  }
+  ul {
+    gap: 2rem;
+    .savedPair {
+      .savedUserFood,
+      .savedAltFood {
+        p {
+        display: none;
+        }
+      }
+      .savedUserPic,
+      .savedAltPic {
+        height: 8rem;
+        width: 8rem;
+      }
+    }
   }
 }
-
-
-
-
-
-// Media queries
-
-@media (max-width: 1200px) {
-  .foodSection .foodWrapper .nutrient {
-    margin: 0;
-    align-self: center;
-  }
 }
 
-@media (max-width: 830px) {
-  .foodSection .foodWrapper {
-    padding-bottom: 35px;
-  }
-}
-
-@media (max-width: 650px) {
-  .mainButtons {
-    padding-top: 15px;
-  }
-  .food {
-    padding-top: 15px;
-  }
-}
-
-
-@media (max-width: 1000px) {
-
-}
-
-@media (max-width: 830px) {
-
-}
-
-@media (max-width: 700px) {
-  h1 {
-
-  }
-}
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 3rem;
-  }
-  .mainButtons {
-    flex-direction: column;
-    align-items: center;
-  }
-  .foodContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 430px) {
-  .header h1 {
-    font-size: 3rem;
-    padding: 20px 0;
-  }
-
-  .footer {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 320px) {
-  .header h1 {
+  
+.savedMain {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    font-family: $font-secondary;
     font-size: 2rem;
-    padding: 24px 0;
+    padding: 0.3rem 0;
   }
-
-  form input {
-    padding: 0;
+  .homeButton {
+    margin-top: 0.75rem;
   }
-
-  .foodSection .foodButtons {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 420px) {
-  .savedUserFood p,
-  .savedAltFood p {
-    display: none;
-  }
-  .savedUserPic,
-  .savedAltPic {
-    height: 120px;
-    width: 120px;
+  ul {
+    .savedPair {
+      .savedUserFood,
+      .savedAltFood {
+        p {
+        display: none;
+        }
+      }
+      .savedUserPic,
+      .savedAltPic {
+        height: 5rem;
+        width: 5rem;
+      }
+    }
   }
 }
+
+footer {
+  margin-top: 2rem;
+}
+}
+
+// @media (max-width: 480px) {
+//   h1 {
+//     font-size: 3rem;
+//   }
+//   .mainButtons {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+//   .foodContainer {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }
+
+// @media (max-width: 430px) {
+//   .header h1 {
+//     font-size: 3rem;
+//     padding: 20px 0;
+//   }
+
+//   .footer {
+//     padding: 15px;
+//   }
+// }
+
+// @media (max-width: 320px) {
+//   .header h1 {
+//     font-size: 2rem;
+//     padding: 24px 0;
+//   }
+
+//   form input {
+//     padding: 0;
+//   }
+
+//   .foodSection .foodButtons {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }
+
+// @media (max-width: 420px) {
+//   .savedUserFood p,
+//   .savedAltFood p {
+//     display: none;
+//   }
+//   .savedUserPic,
+//   .savedAltPic {
+//     height: 120px;
+//     width: 120px;
+//   }
+// }

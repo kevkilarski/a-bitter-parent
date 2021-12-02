@@ -302,6 +302,10 @@ button:hover {
   margin: 0 auto;
 }
 
+.break {
+  display: block;
+}
+
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 6rem;
@@ -314,7 +318,7 @@ p {
 
 header {
   padding: 3rem 0;
-  height: 50vh;
+  min-height: 50vh;
 }
 header .wrapper {
   display: flex;
@@ -324,7 +328,7 @@ header .wrapper {
   border: 0.5rem solid #ffffffef;
   border-right: 0.5rem solid #ffb454;
   border-bottom: 0.5rem solid #ffb454;
-  background: #f0e0ca;
+  background: #f3efdb;
 }
 header .wrapper h1 {
   margin: 1rem;
@@ -340,7 +344,7 @@ header .wrapper p span {
 }
 
 .search {
-  height: 30vh;
+  min-height: 30vh;
 }
 
 form {
@@ -373,7 +377,7 @@ form .submitButton {
 }
 
 .food {
-  min-height: calc(100vh - 50vh - 30vh - 5vh);
+  min-height: calc(100vh - 50vh - 30vh - 7vh);
   font-family: "Maitree", serif;
   display: flex;
   flex-direction: column;
@@ -416,28 +420,82 @@ form .submitButton {
   padding: 15px 0;
 }
 .foodOutputSection .foodWrapper .foodPicture {
-  height: 150px;
-  width: 150px;
+  height: 7.5rem;
+  width: 7.5rem;
 }
 .foodOutputSection .foodWrapper .foodPicture img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 30px;
+  border-radius: 1.5rem;
 }
 .foodOutputSection .foodWrapper .fa-pause-circle {
   transform: rotate(90deg);
 }
 .foodOutputSection .foodWrapper .nutrient {
-  padding: 5px 0;
+  padding: 0.25rem 0;
+}
+
+.savedMain {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.savedMain h2 {
+  font-family: "Maitree", serif;
+  font-size: 2rem;
+  padding: 0.3rem 0;
+}
+.savedMain .homeButton {
+  margin-top: 0.75rem;
+}
+.savedMain ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.savedMain ul .savedPair {
+  display: flex;
+}
+.savedMain ul .savedPair .savedUserFood,
+.savedMain ul .savedPair .savedAltFood {
+  text-align: center;
+  text-transform: capitalize;
+}
+.savedMain ul .savedPair .savedUserFood p,
+.savedMain ul .savedPair .savedAltFood p {
+  padding: 0.8rem 0;
+  font-size: 1rem;
+}
+.savedMain ul .savedPair .savedUserPic,
+.savedMain ul .savedPair .savedAltPic {
+  height: 10rem;
+  width: 10rem;
+}
+.savedMain ul .savedPair .savedUserPic img,
+.savedMain ul .savedPair .savedAltPic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.savedMain ul .savedPair .savedUserPic img {
+  border-radius: 30px 0 0 30px;
+}
+.savedMain ul .savedPair .savedAltPic img {
+  border-radius: 0 30px 30px 0;
+  border-left: 0.15rem solid black;
 }
 
 .footer {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 5vh;
+  height: 7vh;
   position: relative;
 }
 .footer ::after {
@@ -454,134 +512,92 @@ form .submitButton {
   font-size: 1rem;
 }
 
-.savedMain .homeButton {
-  margin-top: 0.75rem;
+@media (max-width: 1250px) {
+  h1 {
+    font-size: 4.5rem;
+  }
 }
-.savedMain ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 30px;
-  margin: 40px 0;
-  border: 5px solid pink;
+@media (max-width: 1000px) {
+  header {
+    min-height: 40vh;
+  }
+  header .wrapper h1 {
+    font-size: 3.2rem;
+  }
+  header .wrapper p {
+    font-size: 1.2rem;
+    padding: 0.1rem 0 1.5rem;
+  }
 }
-.savedMain ul .savedPair {
-  display: flex;
-}
-.savedMain ul .savedPair .savedUserFood,
-.savedMain ul .savedPair .savedAltFood {
-  text-align: center;
-  text-transform: uppercase;
-}
-.savedMain ul .savedPair .savedUserFood p,
+@media (max-width: 720px) {
+  header {
+    padding-bottom: 2rem;
+  }
+  header .wrapper h1 {
+    font-size: 2.5rem;
+    padding: 0;
+  }
+  header .wrapper h1 .blockMedia {
+    display: block;
+  }
+  header .wrapper p {
+    font-size: 1rem;
+    padding: 0.1rem 0 1.5rem;
+  }
+
+  .savedMain {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .savedMain h2 {
+    font-family: "Maitree", serif;
+    font-size: 2rem;
+    padding: 0.3rem 0;
+  }
+  .savedMain .homeButton {
+    margin-top: 0.75rem;
+  }
+  .savedMain ul {
+    gap: 2rem;
+  }
+  .savedMain ul .savedPair .savedUserFood p,
 .savedMain ul .savedPair .savedAltFood p {
-  padding: 5px;
-}
-.savedMain ul .savedPair .savedUserPic,
+    display: none;
+  }
+  .savedMain ul .savedPair .savedUserPic,
 .savedMain ul .savedPair .savedAltPic {
-  height: 200px;
-  width: 200px;
-  border-radius: 30px;
-}
-.savedMain ul .savedPair .savedUserPic img,
-.savedMain ul .savedPair .savedAltPic img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 30px;
-}
-.savedMain ul .savedPair .savedUserPic img {
-  border-radius: 30px 0 0 30px;
-}
-.savedMain ul .savedPair .savedAltPic img {
-  border-radius: 0 30px 30px 0;
-  border-left: 2px solid black;
-}
-
-.savedMain {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.savedMain h2 {
-  background-color: #ffb0d7;
-  font-family: "Maitree", serif;
-  font-size: 38px;
-  color: midnightblue;
-  padding: 10px 0;
-}
-
-@media (max-width: 1200px) {
-  .foodSection .foodWrapper .nutrient {
-    margin: 0;
-    align-self: center;
-  }
-}
-@media (max-width: 830px) {
-  .foodSection .foodWrapper {
-    padding-bottom: 35px;
-  }
-}
-@media (max-width: 650px) {
-  .mainButtons {
-    padding-top: 15px;
-  }
-
-  .food {
-    padding-top: 15px;
+    height: 8rem;
+    width: 8rem;
   }
 }
 @media (max-width: 480px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  .mainButtons {
+  .savedMain {
+    display: flex;
+    text-align: center;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
-
-  .foodContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media (max-width: 430px) {
-  .header h1 {
-    font-size: 3rem;
-    padding: 20px 0;
-  }
-
-  .footer {
-    padding: 15px;
-  }
-}
-@media (max-width: 320px) {
-  .header h1 {
+  .savedMain h2 {
+    font-family: "Maitree", serif;
     font-size: 2rem;
-    padding: 24px 0;
+    padding: 0.3rem 0;
   }
-
-  form input {
-    padding: 0;
+  .savedMain .homeButton {
+    margin-top: 0.75rem;
   }
-
-  .foodSection .foodButtons {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media (max-width: 420px) {
-  .savedUserFood p,
-.savedAltFood p {
+  .savedMain ul .savedPair .savedUserFood p,
+.savedMain ul .savedPair .savedAltFood p {
     display: none;
   }
+  .savedMain ul .savedPair .savedUserPic,
+.savedMain ul .savedPair .savedAltPic {
+    height: 5rem;
+    width: 5rem;
+  }
 
-  .savedUserPic,
-.savedAltPic {
-    height: 120px;
-    width: 120px;
+  footer {
+    margin-top: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */

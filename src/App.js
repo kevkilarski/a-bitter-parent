@@ -29,7 +29,7 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // 1st API call: Takes user input to use as query and returns 2 arrays (Common & Branded) of 20 items. 
+    // 1st API call: Takes user input to use as query and returns 2 arrays (Common & Branded) of 20 items.
 
     // 2nd API call: We use the first item in the common food array as our query for this call to get nutrients data on the user searched food.
 
@@ -51,7 +51,6 @@ function App() {
       },
     })
       .then((inputRes) => {
-
         if (!inputRes.data.common[0]) {
           throw new Error("Food not found - Please try again!");
         }
@@ -72,7 +71,6 @@ function App() {
         });
       })
       .then((foodRes) => {
-
         // Set user food to state with nutrients data
         setUserFood(foodRes.data.foods[0]);
         const searchFoodSugar = foodRes.data.foods[0].nf_sugars;
@@ -107,7 +105,6 @@ function App() {
         });
       })
       .then((suggestionRes) => {
-
         const suggestions = suggestionRes.data.common;
 
         const suggestionIndex = randomIndex(suggestions);
@@ -183,75 +180,68 @@ function App() {
   };
 
   return (
+
     <Router>
 
       {/* HEADER */}
       <header>
         <div className="wrapper">
-
-          <h1>A <span>Bitter</span> Parent</h1>
-          <p><span>Hey kids!</span> Enter a sweet treat you’re craving into the search form above and we’ll suggest something that you and your parents can feel good about!</p>
-
+          <h1>
+            A Bitter <span className="blockMedia">Parent</span>
+          </h1>
+          <p>
+            <span>Hey kids!</span> Enter a sweet treat you’re craving into the
+            search form above and we’ll suggest something that you and your
+            parents can feel good about!
+          </p>
         </div>
       </header>
 
-      {/* INDEX - DISPLAY ON LOAD */}
+      {/* SEARCH ROUTE */}
       <Route exact path="/">
-        {/* SEARCH */}
         <section className="search">
           <div className="wrapper">
-
             <SearchForm
               userText={userText}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
             />
 
+            {/* Search Buttons */}
             <div className="mainButtons">
-
               <Link className="pairsLink" to="/savedPairs">
                 <button className="foodButton">View Saved Pairs</button>
               </Link>
-              <button className="foodButton" onClick={onClear}>Clear</button>
+              <button className="foodButton" onClick={onClear}>
+                Clear
+              </button>
             </div>
-
           </div>
         </section>
 
-        {/* OUTPUT */}
+        {/* Search Output */}
         <main className="food">
           <div className="wrapper">
-
             <FoodOutput
               userFood={userFood}
               altFood={altFood}
               savedPair={savedPair}
             />
-
           </div>
         </main>
-
-        {/* FOOTER */}
-        <footer className="footer">
-          <div className="wrapper">
-            <p>Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin
-            Kilarski using the Nutritionix API and Firebase.</p>
-          </div>
-        </footer>
       </Route>
 
       {/* SAVED PAIRS ROUTE */}
       <Route path="/savedPairs">
         <main className="savedMain">
           <div className="wrapper">
-
             <h2>Your Saved Pairs</h2>
 
             <Link className="homeLink" to="/">
               <button className="homeButton">Home</button>
             </Link>
 
-            {/* DISPLAY SAVED PAIRS FROM STATE */}
+            {/* Saved Pairs Render */}
             <ul>
               {food.map((pair) => {
                 return (
@@ -280,7 +270,14 @@ function App() {
           </div>
         </main>
       </Route>
-      
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <div className="wrapper">
+          <p>Created by Zeynab Manafova, Lou Saint-Andre, Cam Remesz, and Kevin Kilarski<span className="break">using the Nutritionix API, React, and Firebase.</span>
+          </p>
+        </div>
+      </footer>
     </Router>
   );
 }
