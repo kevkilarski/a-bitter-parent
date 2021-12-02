@@ -261,7 +261,7 @@ h1, p {
 }
 
 button {
-  background-color: $color-green;
+  background: linear-gradient(rgb(143, 197, 143) 1%, lightgreen 100%);
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
   border: 0.1rem solid $color-grey;
@@ -269,10 +269,6 @@ button {
   font-size: 1.2rem;
   cursor: pointer;
   transition: 0.2s;
-}
-
-button:hover {
-  background-color: $color-dark-green;
 }
 
 .wrapper {
@@ -311,11 +307,14 @@ header {
     border: 0.5rem solid $color-white;
     border-right: 0.5rem solid $color-orange;
     border-bottom: 0.5rem solid $color-orange;
-    background: rgb(243, 239, 219);
+    background: linear-gradient(rgb(231, 231, 193) 1%, rgb(238, 236, 144) 100%);    
     h1 {
       margin: 1rem;
       padding: 0.5rem 1rem 0;
-
+      font-weight: 800;
+      .h1Style {
+        text-decoration: underline;
+      }
     }
     p {
       padding: 0.75rem 0 2.5rem;
@@ -369,32 +368,29 @@ form {
 .food {
   min-height: calc(100vh - 50vh - 30vh - 7vh);
   font-family: $font-secondary;
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  padding-top: 28px;
+  padding-top: 1.5rem;
   p {
-    color: #6b2718;
     font-weight: bold;
-    padding: 10px;
-    span {
-      font-weight: bolder;
-      font-style: italic;
-      font-family: Georgia, "Times New Roman", Times, serif;
-    }
+    padding: 0.5rem;
   }
 }
 
 
-// OUTPUT - Food Output Component
+// FOOD OUTPUT COMPONENT
 
 .foodOutputSection {
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-top: 2rem;
   .foodButtons {
     display: flex;
     justify-content: space-around;
+    .foodButton {
+      background-color: linear-gradient(rgb(143, 197, 143) 1%, lightgreen 100%);
+      border: 0.155rem solid green;
+    }
   }
   .foodContainer {
     display: flex;
@@ -559,6 +555,24 @@ form {
     }
   }
 
+  form {
+    input {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .mainButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    .foodButton {
+      margin: 0;
+      padding: 0.5rem 0;
+    }
+  }
+
   // .savedMain {
   //   min-height: 50vh;
   //   ul {  
@@ -570,7 +584,28 @@ form {
   //   }
   // }
 
+  // .food {
+  //   flex-direction: column;
+  // }
 
+  .foodOutputSection {
+    margin-top: 3rem;
+    .foodButton {
+      padding: 0.5rem 1.5rem;
+    }
+  }
+
+  .foodContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 2rem 0;
+    .foodWrapper {
+      margin: 0;
+    }
+  }
 
 .savedMain {
   display: flex;
@@ -606,7 +641,13 @@ form {
 
 
 @media (max-width: 480px) {
-  
+
+.mainButtons {
+  .foodButton {
+    width: 11rem;
+  }
+}
+
 .savedMain {
   display: flex;
   text-align: center;
@@ -634,6 +675,12 @@ form {
         width: 5rem;
       }
     }
+  }
+}
+
+.foodOutputSection {
+  .foodButton {
+    padding: 0.55rem;
   }
 }
 

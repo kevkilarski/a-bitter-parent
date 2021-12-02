@@ -282,7 +282,7 @@ h1, p {
 }
 
 button {
-  background-color: #a3f1bd;
+  background: linear-gradient(#8fc58f 1%, lightgreen 100%);
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
   border: 0.1rem solid #9a9b9a;
@@ -290,10 +290,6 @@ button {
   font-size: 1.2rem;
   cursor: pointer;
   transition: 0.2s;
-}
-
-button:hover {
-  background-color: #71dd9c;
 }
 
 .wrapper {
@@ -328,11 +324,15 @@ header .wrapper {
   border: 0.5rem solid #ffffffef;
   border-right: 0.5rem solid #ffb454;
   border-bottom: 0.5rem solid #ffb454;
-  background: #f3efdb;
+  background: linear-gradient(#e7e7c1 1%, #eeec90 100%);
 }
 header .wrapper h1 {
   margin: 1rem;
   padding: 0.5rem 1rem 0;
+  font-weight: 800;
+}
+header .wrapper h1 .h1Style {
+  text-decoration: underline;
 }
 header .wrapper p {
   padding: 0.75rem 0 2.5rem;
@@ -379,30 +379,27 @@ form .submitButton {
 .food {
   min-height: calc(100vh - 50vh - 30vh - 7vh);
   font-family: "Maitree", serif;
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  padding-top: 28px;
+  padding-top: 1.5rem;
 }
 .food p {
-  color: #6b2718;
   font-weight: bold;
-  padding: 10px;
-}
-.food p span {
-  font-weight: bolder;
-  font-style: italic;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 0.5rem;
 }
 
 .foodOutputSection {
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-top: 2rem;
 }
 .foodOutputSection .foodButtons {
   display: flex;
   justify-content: space-around;
+}
+.foodOutputSection .foodButtons .foodButton {
+  background-color: linear-gradient(#8fc58f 1%, lightgreen 100%);
+  border: 0.155rem solid green;
 }
 .foodOutputSection .foodContainer {
   display: flex;
@@ -545,6 +542,41 @@ form .submitButton {
     padding: 0.1rem 0 1.5rem;
   }
 
+  form input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .mainButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .mainButtons .foodButton {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .foodOutputSection {
+    margin-top: 3rem;
+  }
+  .foodOutputSection .foodButton {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .foodContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  .foodContainer .foodWrapper {
+    margin: 0;
+  }
+
   .savedMain {
     display: flex;
     text-align: center;
@@ -573,6 +605,10 @@ form .submitButton {
   }
 }
 @media (max-width: 480px) {
+  .mainButtons .foodButton {
+    width: 11rem;
+  }
+
   .savedMain {
     display: flex;
     text-align: center;
@@ -595,6 +631,10 @@ form .submitButton {
 .savedMain ul .savedPair .savedAltPic {
     height: 5rem;
     width: 5rem;
+  }
+
+  .foodOutputSection .foodButton {
+    padding: 0.55rem;
   }
 
   footer {

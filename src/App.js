@@ -186,9 +186,7 @@ function App() {
       {/* HEADER */}
       <header>
         <div className="wrapper">
-          <h1>
-            A Bitter <span className="blockMedia">Parent</span>
-          </h1>
+          <h1>A <span className="h1Style">Bitter</span> <span className="blockMedia">Parent</span></h1>
           <p>
             <span>Hey kids!</span> Enter a sweet treat you’re craving into the
             search form above and we’ll suggest something that you and your
