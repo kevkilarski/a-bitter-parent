@@ -273,7 +273,10 @@ html {
 }
 
 body {
-  background: linear-gradient(270deg, #ffffffef 1%, #aebdff 12%, #aebdff 88%, #ffffffef 100%);
+  background: url("./assets/background2.jpg");
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.15);
+  background-blend-mode: multiply;
 }
 
 h1, p {
@@ -282,10 +285,10 @@ h1, p {
 }
 
 button {
-  background: linear-gradient(#8fc58f 1%, lightgreen 100%);
+  background: linear-gradient(#aebdff 1%, #708bff 100%);
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
-  border: 0.1rem solid #9a9b9a;
+  border: 0.1rem solid #363636;
   font-family: "Maitree", serif;
   font-size: 1.2rem;
   cursor: pointer;
@@ -315,24 +318,21 @@ p {
 header {
   padding: 3rem 0;
   min-height: 50vh;
+  background: linear-gradient(270deg, transparent 1%, #aebdff 35%, #aebdff 65%, transparent 100%);
 }
 header .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0.5rem solid #ffffffef;
-  border-right: 0.5rem solid #ffb454;
-  border-bottom: 0.5rem solid #ffb454;
-  background: linear-gradient(#e7e7c1 1%, #eeec90 100%);
+  border: 0.3rem solid #ffffffef;
+  background: url("./assets/header2.jpg") left;
+  background-size: 300%;
 }
 header .wrapper h1 {
   margin: 1rem;
   padding: 0.5rem 1rem 0;
-  font-weight: 800;
-}
-header .wrapper h1 .h1Style {
-  text-decoration: underline;
+  font-weight: 900;
 }
 header .wrapper p {
   padding: 0.75rem 0 2.5rem;
@@ -345,6 +345,7 @@ header .wrapper p span {
 
 .search {
   min-height: 30vh;
+  background: linear-gradient(270deg, transparent 1%, #aebdff 35%, #aebdff 65%, transparent 100%);
 }
 
 form {
@@ -357,9 +358,10 @@ form {
 form input {
   padding: 0.5rem 3.5rem;
   text-align: center;
-  border: 0.2rem solid #ffb454;
+  border: 0.2rem solid #9a9b9a;
   border-radius: 1rem;
   color: #363636;
+  background-color: #ffffffef;
   font-size: 1.4rem;
 }
 form .submitButton {
@@ -381,6 +383,7 @@ form .submitButton {
   font-family: "Maitree", serif;
   text-align: center;
   padding-top: 1.5rem;
+  background: linear-gradient(270deg, transparent 1%, #aebdff 35%, #aebdff 65%, transparent 100%);
 }
 .food p {
   font-weight: bold;
@@ -399,7 +402,7 @@ form .submitButton {
 }
 .foodOutputSection .foodButtons .foodButton {
   background-color: linear-gradient(#8fc58f 1%, lightgreen 100%);
-  border: 0.155rem solid green;
+  border: 0.155rem solid #9a9b9a;
 }
 .foodOutputSection .foodContainer {
   display: flex;
@@ -439,14 +442,11 @@ form .submitButton {
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  background: linear-gradient(270deg, transparent 1%, #aebdff 35%, #aebdff 65%, transparent 100%);
 }
 .savedMain h2 {
-  font-family: "Maitree", serif;
   font-size: 2rem;
   padding: 0.3rem 0;
-}
-.savedMain .homeButton {
-  margin-top: 0.75rem;
 }
 .savedMain ul {
   display: flex;
@@ -492,8 +492,10 @@ form .submitButton {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 7vh;
+  min-height: 7vh;
+  padding: 1vh 0;
   position: relative;
+  background: #ffffffef;
 }
 .footer ::after {
   content: "";
@@ -507,6 +509,7 @@ form .submitButton {
 }
 .footer p {
   font-size: 1rem;
+  color: #363636;
 }
 
 @media (max-width: 1250px) {
@@ -515,20 +518,14 @@ form .submitButton {
   }
 }
 @media (max-width: 1000px) {
-  header {
-    min-height: 40vh;
-  }
   header .wrapper h1 {
-    font-size: 3.2rem;
-  }
-  header .wrapper p {
-    font-size: 1.2rem;
-    padding: 0.1rem 0 1.5rem;
+    text-align: center;
   }
 }
 @media (max-width: 720px) {
   header {
     padding-bottom: 2rem;
+    min-height: 20vh;
   }
   header .wrapper h1 {
     font-size: 2.5rem;
@@ -546,6 +543,9 @@ form .submitButton {
     padding: 0.5rem 1rem;
     font-size: 1rem;
   }
+  form .submitButton {
+    font-size: 1rem;
+  }
 
   .mainButtons {
     flex-direction: column;
@@ -554,14 +554,21 @@ form .submitButton {
     margin-top: 2.5rem;
   }
   .mainButtons .foodButton {
+    width: 11rem;
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
+    font-size: 1rem;
+  }
+
+  .food {
+    min-height: auto;
   }
 
   .foodOutputSection {
     margin-top: 3rem;
   }
   .foodOutputSection .foodButton {
+    font-size: 1rem;
     padding: 0.5rem 1.5rem;
   }
 
@@ -577,31 +584,8 @@ form .submitButton {
     margin: 0;
   }
 
-  .savedMain {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .savedMain h2 {
-    font-family: "Maitree", serif;
-    font-size: 2rem;
-    padding: 0.3rem 0;
-  }
   .savedMain .homeButton {
     margin-top: 0.75rem;
-  }
-  .savedMain ul {
-    gap: 2rem;
-  }
-  .savedMain ul .savedPair .savedUserFood p,
-.savedMain ul .savedPair .savedAltFood p {
-    display: none;
-  }
-  .savedMain ul .savedPair .savedUserPic,
-.savedMain ul .savedPair .savedAltPic {
-    height: 8rem;
-    width: 8rem;
   }
 }
 @media (max-width: 480px) {
@@ -623,10 +607,6 @@ form .submitButton {
   .savedMain .homeButton {
     margin-top: 0.75rem;
   }
-  .savedMain ul .savedPair .savedUserFood p,
-.savedMain ul .savedPair .savedAltFood p {
-    display: none;
-  }
   .savedMain ul .savedPair .savedUserPic,
 .savedMain ul .savedPair .savedAltPic {
     height: 5rem;
@@ -635,9 +615,5 @@ form .submitButton {
 
   .foodOutputSection .foodButton {
     padding: 0.55rem;
-  }
-
-  footer {
-    margin-top: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */
