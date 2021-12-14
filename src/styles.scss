@@ -252,7 +252,10 @@ $color-grey: #9a9b9a;
 // GENERAL STYLING
 
 body {
-  background: linear-gradient(270deg, $color-white 1%,  $color-purple 12%, $color-purple 88%, $color-white 100%);
+  background: url('./assets/background2.jpg');
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.15);
+  background-blend-mode: multiply;
 }
 
 h1, p {
@@ -261,10 +264,10 @@ h1, p {
 }
 
 button {
-  background: linear-gradient(rgb(143, 197, 143) 1%, lightgreen 100%);
+  background: linear-gradient($color-purple 1%, $color-dark-purple 100%);
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
-  border: 0.1rem solid $color-grey;
+  border: 0.1rem solid $color-black;
   font-family: $font-secondary;
   font-size: 1.2rem;
   cursor: pointer;
@@ -299,22 +302,19 @@ p {
 header {
   padding: 3rem 0;
   min-height: 50vh;
+  background: linear-gradient(270deg, transparent 1%,  $color-purple 35%, $color-purple 65%, transparent 100%);
   .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid $color-white;
-    border-right: 0.5rem solid $color-orange;
-    border-bottom: 0.5rem solid $color-orange;
-    background: linear-gradient(rgb(231, 231, 193) 1%, rgb(238, 236, 144) 100%);    
+    border: 0.3rem solid $color-white;
+    background: url('./assets/header2.jpg') left;
+    background-size: 300%;    
     h1 {
       margin: 1rem;
       padding: 0.5rem 1rem 0;
-      font-weight: 800;
-      .h1Style {
-        text-decoration: underline;
-      }
+      font-weight: 900;
     }
     p {
       padding: 0.75rem 0 2.5rem;
@@ -331,6 +331,7 @@ header {
 
 .search {
   min-height: 30vh;
+  background: linear-gradient(270deg, transparent 1%,  $color-purple 35%, $color-purple 65%, transparent 100%);
 }
 
 form {
@@ -342,9 +343,10 @@ form {
   input {
     padding: 0.5rem 3.5rem;
     text-align: center;
-    border: 0.2rem solid $color-orange;
+    border: 0.2rem solid $color-grey;
     border-radius: 1rem;
     color: $color-black;
+    background-color: $color-white;
     font-size: 1.4rem;
   }
   .submitButton {
@@ -370,6 +372,7 @@ form {
   font-family: $font-secondary;
   text-align: center;
   padding-top: 1.5rem;
+  background: linear-gradient(270deg, transparent 1%,  $color-purple 35%, $color-purple 65%, transparent 100%);
   p {
     font-weight: bold;
     padding: 0.5rem;
@@ -389,7 +392,7 @@ form {
     justify-content: space-around;
     .foodButton {
       background-color: linear-gradient(rgb(143, 197, 143) 1%, lightgreen 100%);
-      border: 0.155rem solid green;
+      border: 0.155rem solid $color-grey;
     }
   }
   .foodContainer {
@@ -432,13 +435,10 @@ form {
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  background: linear-gradient(270deg, transparent 1%,  $color-purple 35%, $color-purple 65%, transparent 100%);
   h2 {
-    font-family: $font-secondary;
     font-size: 2rem;
     padding: 0.3rem 0;
-  }
-  .homeButton {
-    margin-top: 0.75rem;
   }
   ul {
     display: flex;
@@ -485,8 +485,10 @@ form {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 7vh;
+  min-height: 7vh;
+  padding: 1vh 0;
   position: relative;
+  background: $color-white;
   ::after {
     content: '';
     position: absolute;
@@ -499,6 +501,7 @@ form {
   }
   p {
     font-size: 1rem;
+    color: $color-black;
   }
 }
 
@@ -512,14 +515,9 @@ form {
 
 @media (max-width: 1000px) {
   header {
-    min-height: 40vh;
     .wrapper {
       h1 {
-        font-size: 3.2rem;
-      }
-      p {
-        font-size: 1.2rem;
-        padding: 0.1rem 0 1.5rem;
+        text-align: center;
       }
     }
   }
@@ -528,6 +526,7 @@ form {
 @media (max-width: 720px) {
   header {
     padding-bottom: 2rem;
+    min-height: 20vh;
     .wrapper {
       h1 {
         font-size: 2.5rem;
@@ -548,6 +547,9 @@ form {
       padding: 0.5rem 1rem;
       font-size: 1rem;
     }
+    .submitButton {
+      font-size: 1rem;
+    }
   }
 
   .mainButtons {
@@ -556,14 +558,21 @@ form {
     gap: 1rem;
     margin-top: 2.5rem;
     .foodButton {
+      width: 11rem;
       margin: 0;
-      padding: 0.5rem 0;
+      padding: 0.4rem 0;
+      font-size: 1rem;
     }
+  }
+
+  .food {
+    min-height: auto;
   }
 
   .foodOutputSection {
     margin-top: 3rem;
     .foodButton {
+      font-size: 1rem;
       padding: 0.5rem 1.5rem;
     }
   }
@@ -579,35 +588,9 @@ form {
       margin: 0;
     }
   }
-
   .savedMain {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    h2 {
-      font-family: $font-secondary;
-      font-size: 2rem;
-      padding: 0.3rem 0;
-    }
     .homeButton {
       margin-top: 0.75rem;
-    }
-    ul {
-      gap: 2rem;
-      .savedPair {
-        .savedUserFood,
-        .savedAltFood {
-          p {
-          display: none;
-          }
-        }
-        .savedUserPic,
-        .savedAltPic {
-          height: 8rem;
-          width: 8rem;
-        }
-      }
     }
   }
 }
@@ -636,12 +619,6 @@ form {
     }
     ul {
       .savedPair {
-        .savedUserFood,
-        .savedAltFood {
-          p {
-          display: none;
-          }
-        }
         .savedUserPic,
         .savedAltPic {
           height: 5rem;
@@ -655,9 +632,5 @@ form {
     .foodButton {
       padding: 0.55rem;
     }
-  }
-
-  footer {
-    margin-top: 2rem;
   }
 }

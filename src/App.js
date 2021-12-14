@@ -186,10 +186,10 @@ function App() {
       {/* HEADER */}
       <header>
         <div className="wrapper">
-          <h1>A <span className="h1Style">Bitter</span> <span className="blockMedia">Parent</span></h1>
+          <h1>A Bitter <span className="blockMedia">Parent</span></h1>
           <p>
-            <span>Hey kids!</span> Enter a sweet treat you’re craving into the
-            search form above and we’ll suggest something that you and your
+            <span>Hey kids!</span> Enter a sweet treat into the
+            search form above and we’ll suggest an alternative that you and your
             parents can feel good about!
           </p>
         </div>
@@ -233,11 +233,12 @@ function App() {
       <Route path="/savedPairs">
         <main className="savedMain">
           <div className="wrapper">
-            <h2>Your Saved Pairs</h2>
 
             <Link className="homeLink" to="/">
               <button className="homeButton">Home</button>
             </Link>
+
+            <h2>Your Saved Pairs</h2>
 
             {/* Saved Pairs Render */}
             <ul>
